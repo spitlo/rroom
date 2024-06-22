@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+set -eu
+
+# shellcheck source=./env.globals
+# shellcheck disable=SC1091
+source bin/env.globals
+
+DEFAULT_METHOD="patch"
+MAIN_BRANCH="main"
+FORCE="no"
+USAGE="
+${BROWN}Usage${NC}: $0 [ARGUMENTS]
+Increases version of project naively (only major, minor and patch) based on current git tag.
+Adds a tag with the new version. Then deploys site.
+${BROWN}Arguments${NC}:
+  [patch|minor|major]   Semver version change. Defaults to 'patch'.
+"
+
+method="$DEFAULT_METHOD"
+
+# Handle args
+for arg in "$@"; do
+  if [ "$arg" = "patch" ] || [ "$arg" = "minor" ] || [ "$arg" = "major" ]; then
+    method="$arg"
+  elif [ "$arg" = "help" ] || [ "$arg" = "--help" ] || [ "$arg" = "-h" ]; then
+    echo -e "$USAGE"
+    exit 0
+  elif [ "$arg" = "--force" ] || [ "$arg" = "-f" ]; then
+    FORCE="yes"
+  else
+    echo "Unknown argument '$arg'"
+    exit 0
+  fi
+done
+
+if [ "$(git symbolic-ref -q HEAD)" != "refs/heads/$MAIN_BRANCH" ]; then
+  if [ "$FORCE" = "no" ]; then
+    echo "Deploying is only allowed from the '$MAIN_BRANCH' branch. Exiting."
+    exit 1
+  fi
+fi
+
+if git status --porcelain|grep -qv '^??'; then
+  if [ "$FORCE" = "no" ]; then
+    echo "Please commit your changes before deploying."
+    exit 1
+  fi
+else
+  echo -e "\n- Pulling from remote origin."
+  git pull origin "$MAIN_BRANCH"
+fi
+
+# Run a test build. The script will exit on errors
+yarn testbuild
+
+# Test build worked, let’s tag this release
+yarn version "--$method"
+new_version=$(git describe --abbrev=0 --tags)
+
+# Remove all old files
+rm -rf ./docs
+
+# Build site
+yarn build
+
+# Generate changelog
+bin/changelog
+
+# Add built site, commit and push tags
+git add ./docs ./CHANGELOG.md
+git commit --message "Deploy version $new_version"
+git push --tags
+
+# Push everything
+git push origin "$MAIN_BRANCH"

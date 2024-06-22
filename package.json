@@ -1,0 +1,24 @@
+{
+  "name": "rroom",
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "build": "vite build --base=/rroom/",
+    "format": "prettier . --write",
+    "serve": "yarn build && vite preview --base=/rroom/",
+    "start": "vite",
+    "testbuild": "vite build --base=/rroom/ --outDir=./tmp/testbuild"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "prettier": "3.3.1",
+    "vite": "^5.2.13"
+  },
+  "dependencies": {
+    "@strudel/web": "^1.1.0",
+    "lz-string": "^1.5.0"
+  }
+}

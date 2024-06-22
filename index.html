@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <title>The Rainbow Room</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="output"></div>
+
+  <div class="input">
+    <span>&gt;</span><input id="input" autofocus spellcheck="false" autocomplete="off" autocorrect="off" enterkeyhint="Go!">
+  </div>
+
+  <br><br>
+
+  <button id="a">A</button>
+  <button id="b">B</button>
+  <button id="c">C</button>
+  <button id="stop">stop</button>
+
+  <script src="/src/text-engine.js"></script>
+  <script type="module">
+    import gameDisk from '/src/index.js'
+    loadDisk(gameDisk)
+  </script>
+</body>
+
+</html>
