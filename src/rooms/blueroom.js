@@ -71,8 +71,8 @@ const blueRoom = {
     onEnter()
   },
   onLook: () => {
-    const blueroom = getRoom('blueroom')
-    blueroom.desc = ''
+    // const blueroom = getRoom('blueroom')
+    // blueroom.desc = ''
   },
   items: [
     {
@@ -89,6 +89,7 @@ const blueRoom = {
       desc: [
         'There are seven wooden cubes in the bucket. On each side of each cube, a letter is painted – one letter for each cube.',
         'The cubes are about the same size as the square slots in the contraption.',
+        'It appears you can use them in some way.',
       ].join('\n'),
       onUse: () => {
         if (!slots.includes('-')) {

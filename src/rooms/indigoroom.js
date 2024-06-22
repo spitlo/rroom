@@ -30,10 +30,6 @@ const indigoRoom = {
 
     onEnter()
   },
-  onLook: () => {
-    const indigoroom = getRoom('indigoroom')
-    indigoroom.desc = ''
-  },
   items: [],
   exits: [
     {

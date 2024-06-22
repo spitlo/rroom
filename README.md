@@ -9,7 +9,13 @@ The Rainbow Room is some sort of distant cousin to [Conway Twitty’s Game of Li
 ## To do
 
 - [ ] Styling
-- [ ] Make unique synths for each room – preferably in some way related to the color/name of the room
+- [ ] Red room
+- [ ] Orange room
+- [ ] Yellow room
+- [ ] Green room
+- [ ] Blue room
+- [ ] Indigo room
+- [ ] Violet room
 - [ ] Do we need a "Start" button to enable sound?
 - [ ] Add people? Or animals? Or some kind of interaction other than with machines?
 - [ ] Override commands array completely?

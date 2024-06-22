@@ -30,12 +30,6 @@ const redRoom = {
 
     onEnter()
   },
-  onLook: () => {
-    const redroom = getRoom('redroom')
-    redroom.desc = ''
-
-    onEnter()
-  },
   items: [],
   exits: [
     {

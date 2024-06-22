@@ -137,7 +137,7 @@ const greenRoom = {
       onLook: () => {
         if (isLizardFree) {
           println(
-            'A very happy llizard is skipping across the buttons, engaging and disengaging them in a seemingly random pattern.'
+            'A very happy lizard is skipping across the buttons, engaging and disengaging them in a seemingly random pattern.'
           )
         } else {
           describeButtons()

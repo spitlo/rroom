@@ -30,12 +30,6 @@ const violetRoom = {
 
     onEnter()
   },
-  onLook: () => {
-    const violetroom = getRoom('violetroom')
-    violetroom.desc = ''
-
-    onEnter()
-  },
   items: [],
   exits: [
     {
