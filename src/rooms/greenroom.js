@@ -87,8 +87,8 @@ const buttonItems = notes.map((letter) => {
         println('Nothing happens.')
       }
 
-      // This room is now active
-      greenRoom.active = true
+      // This room is now cctive
+      greenRoom.isActive = true
 
       // Update pattern, then update Strudel
       updatePattern()
@@ -111,8 +111,8 @@ const greenRoom = {
     'You can see **buttons** on it, and something that looks like a **lever**.',
     'There is a **cage** on the floor.',
   ].join('\n'),
-  active: false,
-  muted: false,
+  isActive: false,
+  isMuted: false,
   color,
   generateSoundString,
   onEnter: () => {
@@ -209,6 +209,7 @@ const greenRoom = {
           )
           enableLizardWalk()
           isLizardFree = true
+          greenRoom.isActive = true
           greenRoom.items.push({
             name: 'Lizard',
             desc: 'A green lizard.',

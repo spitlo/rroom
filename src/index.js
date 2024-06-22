@@ -10,45 +10,18 @@ import blueRoom from './rooms/blueroom'
 import indigoRoom from './rooms/indigoroom'
 import violetRoom from './rooms/violetroom'
 
-async function loadSamples() {
-  const ds = 'https://raw.githubusercontent.com/felixroos/dough-samples/main/'
-  return Promise.all([
-    samples(`${ds}/tidal-drum-machines.json`),
-    samples(`${ds}/piano.json`),
-    samples(`${ds}/Dirt-Samples.json`),
-    samples(`${ds}/EmuSP12.json`),
-    samples(`${ds}/vcsl.json`),
-  ])
-}
-
-initStrudel({
-  prebake: async () => {
-    // console.log('Prebaking') /* eslint-disable-line */
-    // samples('github:tidalcycles/dirt-samples')
-    // samples('github:felixroos/dough-samples')
-    await loadSamples()
-  },
-})
-
-const click = (id, action) =>
-  document.getElementById(id).addEventListener('click', action)
-
-click('a', () => sound('bd').play())
-click('b', () => sound('bd*2,hh(3,4),jvbass(5,8,1)').play())
-click('c', () =>
-  sound('bd*2,hh(3,4),jvbass:[0 4](5,8,1)').stack(sound('~ sd')).play()
-)
-click('stop', () => hush())
-
 // Override built-in commands
 commands = bespokeCommands
+
+// Initiate Strudel
+initStrudel()
 
 // ___  _ ____ _  _
 // |  \ | [__  |_/
 // |__/ | ___] | \_
 // ------------ ---  --- >
 const gameDisk = () => ({
-  roomId: 'blueroom', // rainbowroom
+  roomId: 'rainbowroom', // rainbowroom
   cpm: 60,
   isPlaying: false,
   inventory: [],

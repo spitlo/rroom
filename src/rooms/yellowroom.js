@@ -17,8 +17,8 @@ const yellowRoom = {
   img: `Y E L L O W _ R O O M`,
   name: `The ${color} Room`,
   desc: `This is the yellow room`,
-  active: false,
-  muted: false,
+  isActive: false,
+  isMuted: false,
   color,
   generateSoundString,
   onEnter: () => {

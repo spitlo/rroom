@@ -23,7 +23,7 @@ const reevaluate = () => {
         // We're in this room, set volume to max
         soundString = `${soundString}.gain(1)`
       }
-      if (room.muted) {
+      if (room.isMuted) {
         soundString = `${soundString}.gain(0)`
       }
       sounds.push(`$: ${soundString}`)
@@ -31,8 +31,10 @@ const reevaluate = () => {
   }
 
   const allSounds = sounds.join('\n')
-  console.log('Re-evaluating ...', allSounds)
-  evaluate(allSounds)
+  if (allSounds.length > 0) {
+    console.log('Re-evaluating ...', allSounds)
+    evaluate(allSounds)
+  }
 }
 
 const onEnter = () => {

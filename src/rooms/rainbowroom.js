@@ -1,17 +1,63 @@
 import { onEnter } from '../utils'
 
 const DESCRIPTION = {
-  initial: `You’re standing in an octagonal room. Seven of the walls hold a door, each in one of the colors of the rainbow.\n\nScrewed to the eight wall is some kind of **control panel**.`,
+  intro: [
+    'Welcome to the Rainbow Room',
+    'This is an experiment in generative, semi-random sequencing – hidden inside an Interactive Fiction story.',
+    'If this is your first time, type HELP to see the commands that are available to you.',
+  ].join('\n'),
+  standard: [
+    'You’re standing in an octagonal room. Seven of the walls hold a door, each in one of the colors of the rainbow.',
+    'The eight wall is almost completely covered by what looks like a **control panel** from some obscure fifties’ sci-fi movie: futuristic, but in an old-fashioned way.',
+    'LEDs, meters, levers, buttons and sliders – some labeled, some not – line the panel.',
+  ].join('\n'),
 }
 
-// The eight wall is almost completely covered by what looks like some kind of control panel.
-// LEDs, meters, levers, buttons and sliders – some labeled, some not –
+const describeLeds = () => {
+  const activeRooms = disk.rooms
+    .filter((room) => room.isActive)
+    .map((room) => room.color)
+
+  if (activeRooms.length === 0) {
+    println('None of the LEDs are lit.')
+  } else if (activeRooms.length === 1) {
+    println(`The ${activeRooms[0]} LED is lit.`)
+  } else {
+    let first = ''
+    for (let i = 0; i < activeRooms.length - 1; i++) {
+      first += `${activeRooms[i]}, `
+    }
+    println(
+      `The ${first.slice(0, -2)} and ${activeRooms[activeRooms.length - 1]} LEDs are lit.`
+    )
+  }
+}
+
+const describeMutes = () => {
+  const mutedRooms = disk.rooms
+    .filter((room) => room.isMuted)
+    .map((room) => room.color)
+
+  if (mutedRooms.length === 0) {
+    println('None of the rooms seem muted.')
+  } else if (mutedRooms.length === 1) {
+    println(`The ${mutedRooms[0]} room is muted.`)
+  } else {
+    let first = ''
+    for (let i = 0; i < mutedRooms.length - 1; i++) {
+      first += `${mutedRooms[i]}, `
+    }
+    println(
+      `The ${first.slice(0, -2)} and ${mutedRooms[mutedRooms.length - 1]} rooms appear to be muted.`
+    )
+  }
+}
 
 const rainbowRoom = {
   id: 'rainbowroom',
   img: `R A I N B O W _ R O O M`,
   name: 'The Rainbow Room',
-  desc: DESCRIPTION.initial,
+  desc: `${DESCRIPTION.intro}\n- - - - - - - - - - - - - - - - - - - -\n${DESCRIPTION.standard}`,
   onEnter: () => {
     // Only show image once
     const rainbowroom = getRoom('rainbowroom')
@@ -25,17 +71,24 @@ const rainbowRoom = {
     }
   },
   onLook: () => {
-    const rainbowroom = getRoom('rainbowroom')
-    rainbowroom.desc = ''
-
-    println(DESCRIPTION.initial)
+    // const rainbowroom = getRoom('rainbowroom')
+    rainbowRoom.desc = DESCRIPTION.standard
   },
   items: [
     {
       name: ['control panel', 'panel'],
-      desc: 'It’s some kind of control panel, with two huge buttons. One says ’**PLAY**’, the other one ’**STOP**’.',
-      onLook: () =>
-        println(disk.isPlaying ? 'The PLAY button is pulsating slowly.' : ''),
+      desc: [
+        'It’s some kind of control panel. In the center of it there are two huge buttons. One says ’**PLAY**’, the other one ’**STOP**’.',
+        'A row of LEDs run across the top of the panel. There are seven of them. Their colors correspond to the colors of the doors.',
+        'Underneath each LED is a switch labeled "Mute".',
+      ].join('\n'),
+      onLook: () => {
+        if (disk.isPlaying) {
+          println('The PLAY button is pulsating slowly.')
+        }
+        describeLeds()
+        describeMutes()
+      },
     },
   ],
   exits: [

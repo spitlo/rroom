@@ -57,8 +57,8 @@ const blueRoom = {
   img: `B L U E _ R O O M`,
   name: `The ${color} Room`,
   desc: `This is the blue room. In the middle of the room there is a weird **contraption**. On the floor beneath the contraption is a **bucket** with what looks like wooden alphabet cubes.`,
-  active: false,
-  muted: false,
+  isActive: false,
+  isMuted: false,
   color,
   generateSoundString,
   onEnter: () => {
@@ -98,7 +98,7 @@ const blueRoom = {
           )
         } else {
           println(
-            'You empty the bucket in the funnel. They tumble down a tube, and – one by one – land in a slot.'
+            'You empty the bucket in the funnel. The cubes tumble down a tube. Some of them land in a slot, others continue through the contraption and end up back in the bucket.'
           )
           while (slots.includes('-')) {
             const letter = pickOne(notes)
@@ -109,6 +109,7 @@ const blueRoom = {
               slots[slot] = letter
             }
           }
+          blueRoom.isActive = true
           updatePattern()
           reevaluate()
           describeSlots()
@@ -124,7 +125,7 @@ const blueRoom = {
                 println('This cube is already in the contraption.')
               } else if (length.emptySlots === 0) {
                 println(
-                  'The cube falls down the funnel, bounces off the filled slots, falls through the contraption and rolls out in the ucket again.'
+                  'The cube falls down the funnel, bounces off the filled slots, falls through the contraption and rolls out in the bucket again.'
                 )
               } else {
                 let slot = getRandomInt(0, 4)
@@ -142,6 +143,7 @@ const blueRoom = {
                       `It tumbles down a tube and lands in the slot numbered ${slot + 1}`,
                     ].join('\n')
                   )
+                  blueRoom.isActive = true
                   usedCubes.push(letter)
                   emptySlots.splice(emptySlots.indexOf(slot), 1)
                   slots[slot] = letter

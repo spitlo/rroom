@@ -17,8 +17,8 @@ const indigoRoom = {
   img: `I N D I G O _ R O O M`,
   name: `The ${color} Room`,
   desc: `This is the indigo room`,
-  active: false,
-  muted: false,
+  isActive: false,
+  isMuted: false,
   color,
   generateSoundString,
   onEnter: () => {

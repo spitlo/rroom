@@ -18,6 +18,7 @@ const press = (button = '') => {
       }
     } else if (button.toLowerCase() === 'stop') {
       if (disk.isPlaying) {
+        console.log('Stopping') /* eslint-disable-line */
         disk.isPlaying = false
         hush()
       } else {
