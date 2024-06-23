@@ -1,5 +1,11 @@
 import { onEnter, reevaluate } from '../utils'
 
+/*
+
+Green: Vegetation, lizard. Notes G-A. "Spirit of Counsel".
+
+*/
+
 const color = 'Green'
 const notes = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 let pattern = ''
@@ -87,7 +93,7 @@ const buttonItems = notes.map((letter) => {
         println('Nothing happens.')
       }
 
-      // This room is now cctive
+      // This room is now active
       greenRoom.isActive = true
 
       // Update pattern, then update Strudel
@@ -119,8 +125,6 @@ const greenRoom = {
     // Only show image once
     const greenroom = getRoom('greenroom')
     greenroom.img = ''
-
-    console.log('Entering green room') /* eslint-disable-line */
 
     onEnter()
   },
@@ -225,7 +229,39 @@ const greenRoom = {
               isLizardFree = false
               disableLizardWalk()
               updatePattern()
-              reevaluate()
+              if (buttons.length > 0) {
+                reevaluate()
+              }
+            },
+            onUse: () => {
+              switch (disk.roomId) {
+                case 'blueroom':
+                  const blueRoom = getRoom('blueroom')
+                  console.log(blueRoom) /* eslint-disable-line */
+                  println(
+                    'You put the lizard in the wheel, and it starts running immediately.'
+                  )
+                  blueRoom.enableWheelTurn()
+                  // Remove lizard from inventory
+                  const lizardIndex = disk.inventory
+                    .map((i) => i.name)
+                    .indexOf('Lizard')
+                  disk.inventory.splice(lizardIndex, 1)
+                  // And put it in the blue room
+                  blueRoom.items.push({
+                    name: 'Lizard',
+                    desc: 'The lizard from the Green Room is now powering your jumping fountain bass machine.',
+                    isTakeable: false,
+                    onTake: () => {
+                      println(
+                        'The lizard snaps at you with its strange beak. It does not seem willing to stop running in this wheel.'
+                      )
+                    },
+                  })
+                  break
+                default:
+                  println('You can’t use the lizard here.')
+              }
             },
           })
         }

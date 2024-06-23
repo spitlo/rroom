@@ -6,6 +6,8 @@ You move between different rooms, each with a unique sound generation machine.
 
 The Rainbow Room is some sort of distant cousin to [Conway Twitty’s Game of Life](https://spitlo.com/ctgol/), [PIKSEQ](https://spitlo.com/pikseq/), [/'siːkwənt/](https://spitlo.com/sikwent/) and [Space](https://spitlo.com/space/). It’s an ever growing family of experimental sequencers!
 
+It uses [Strudel](https://strudel.cc) for sounds and [text-engine](https://github.com/okaybenji/text-engine/) for interactive fiction interface.
+
 ## To do
 
 - [ ] Styling

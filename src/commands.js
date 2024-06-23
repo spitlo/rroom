@@ -1,22 +1,40 @@
 import { reevaluate } from './utils'
 
-const mute = (room) => {
-  console.log(`You muted the ${room} room`) /* eslint-disable-line */
+const mute = (roomId) => {
+  if (disk.roomId === 'rainbowroom') {
+    const room = getRoom(roomId)
+    room.isMuted = true
+    reevaluate()
+    println(`You muted the ${roomId} room`)
+  } else {
+    println(`You probably need som kind of control panel to do that.`)
+  }
 }
 
-const press = (button = '') => {
+const press = (item = '') => {
   if (disk.roomId === 'rainbowroom') {
-    if (button.toLowerCase() === 'play') {
+    if (item.toLowerCase() === 'play') {
       if (disk.isPlaying) {
         println(
           'Already playing. If you don’t hear anything, perhaps you need to find something that can generate sounds?'
         )
       } else {
+        const activeRooms = disk.rooms
+          .filter((room) => room.isActive)
+          .filter((room) => !room.isMuted)
+          .map((room) => room.color)
         println('You press play.')
+        if (activeRooms.length === 0) {
+          println('Nothing happens.')
+        } else if (activeRooms.length === 1) {
+          println(`Music start playing from the ${activeRooms[0]} room.`)
+        } else {
+          println(`Sweet, weird music starts playing.`)
+        }
         disk.isPlaying = true
         reevaluate()
       }
-    } else if (button.toLowerCase() === 'stop') {
+    } else if (item.toLowerCase() === 'stop') {
       if (disk.isPlaying) {
         console.log('Stopping') /* eslint-disable-line */
         disk.isPlaying = false
@@ -26,24 +44,12 @@ const press = (button = '') => {
       }
     }
   } else {
+    useItem(item)
   }
-}
-
-const putXinY = (args) => {
-  console.log(args) /* eslint-disable-line */
-  let items
-  if (args.includes('in')) {
-    items = args.split('in')
-  } else if (args.includes('on')) {
-    items = args.split('in')
-  }
-  // if (['in', 'on', ''].includes(args[1])) {
-  // }
-  console.log(items) /* eslint-disable-line */
 }
 
 const bespokeCommands = [
-  // no arguments (e.g. "help", "chars", "inv")
+  // No arguments (e.g. "help", "chars", "inv")
   {
     inv,
     i: inv, // shortcut for inventory
@@ -67,9 +73,8 @@ const bespokeCommands = [
     export: exportSave,
     import: importSave,
   },
-  // one argument (e.g. "go north", "take book")
+  // One argument (e.g. "go north", "take book")
   {
-    // look: lookThusly,
     go: goDir,
     take: takeItem,
     get: takeItem,
@@ -82,8 +87,9 @@ const bespokeCommands = [
     t: (x) => talkToOrAboutX('to', x), // IF standard shortcut for talk
     export: exportSave,
     import: importSave, // (ignores the argument)
+    mute,
     press,
-    put: (args) => putXinY([null, ...args].join(' ')),
+    push: press,
   },
   // Two+ arguments (e.g. "look at key", "talk to mary")
   {

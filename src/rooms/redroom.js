@@ -1,4 +1,10 @@
-import { onEnter } from '../utils'
+import { onEnter, reevaluate } from '../utils'
+
+/*
+
+Red: Siren?, blood? Notes D-E. F according to Scriabin. "Spirit of the Lord".
+
+*/
 
 const color = 'Red'
 let pattern = ''
@@ -25,8 +31,6 @@ const redRoom = {
     // Only show image once
     const redroom = getRoom('redroom')
     redroom.img = ''
-
-    console.log('Entering red room') /* eslint-disable-line */
 
     onEnter()
   },

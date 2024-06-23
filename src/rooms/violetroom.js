@@ -1,4 +1,10 @@
-import { onEnter } from '../utils'
+import { onEnter, reevaluate } from '../utils'
+
+/*
+
+Violet: Vox. Humanoid? Notes C-D. "Spirit of the Fear of the Lord".
+
+*/
 
 const color = 'Violet'
 let pattern = ''
@@ -25,8 +31,6 @@ const violetRoom = {
     // Only show image once
     const violetroom = getRoom('violetroom')
     violetroom.img = ''
-
-    console.log('Entering violet room') /* eslint-disable-line */
 
     onEnter()
   },

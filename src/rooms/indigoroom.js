@@ -1,4 +1,10 @@
-import { onEnter } from '../utils'
+import { onEnter, reevaluate } from '../utils'
+
+/*
+
+Indigo: Electricity? Notes B-C. "Spirit of Knowledge".
+
+*/
 
 const color = 'Indigo'
 let pattern = ''
@@ -25,8 +31,6 @@ const indigoRoom = {
     // Only show image once
     const indigoroom = getRoom('indigoroom')
     indigoroom.img = ''
-
-    console.log('Entering indigo room') /* eslint-disable-line */
 
     onEnter()
   },

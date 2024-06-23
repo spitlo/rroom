@@ -1,4 +1,10 @@
-import { onEnter } from '../utils'
+import { onEnter, reevaluate } from '../utils'
+
+/*
+
+Orange: Organ, fire. Matches needded? Notes E-F. "Spirit of Wisdom".
+
+*/
 
 const color = 'Orange'
 let pattern = ''
@@ -25,8 +31,6 @@ const orangeRoom = {
     // Only show image once
     const orangeroom = getRoom('orangeroom')
     orangeroom.img = ''
-
-    console.log('Entering orange room') /* eslint-disable-line */
 
     onEnter()
   },

@@ -9,7 +9,7 @@ const DESCRIPTION = {
   standard: [
     'You’re standing in an octagonal room. Seven of the walls hold a door, each in one of the colors of the rainbow.',
     'The eight wall is almost completely covered by what looks like a **control panel** from some obscure fifties’ sci-fi movie: futuristic, but in an old-fashioned way.',
-    'LEDs, meters, levers, buttons and sliders – some labeled, some not – line the panel.',
+    'LEDs, meters, levers, buttons and sliders – some labeled, some not – take up most of the real estate of the panel.',
   ].join('\n'),
 }
 
@@ -63,15 +63,9 @@ const rainbowRoom = {
     const rainbowroom = getRoom('rainbowroom')
     rainbowroom.img = ''
 
-    console.log('Entering rainbow room') /* eslint-disable-line */
-
-    if (disk.isPlaying) {
-      // For now
-      onEnter()
-    }
+    onEnter()
   },
   onLook: () => {
-    // const rainbowroom = getRoom('rainbowroom')
     rainbowRoom.desc = DESCRIPTION.standard
   },
   items: [

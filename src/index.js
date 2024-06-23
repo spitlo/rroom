@@ -21,19 +21,19 @@ initStrudel()
 // |__/ | ___] | \_
 // ------------ ---  --- >
 const gameDisk = () => ({
-  roomId: 'rainbowroom', // rainbowroom
+  roomId: 'rainbowroom',
   cpm: 60,
   isPlaying: false,
   inventory: [],
   rooms: [
     rainbowRoom,
-    redRoom, // R-peggiator? Or siren?, blood? D-E. "Spirit of the Lord".
-    orangeRoom, // Organ, fire. Matches needded? E-F. "Spirit of Wisdom".
-    yellowRoom, // Light? F-G. "Spirit of Understanding".
-    greenRoom, // Vegetation, lizard. G-A. "Spirit of Counsel".
-    blueRoom, // Bass, water. A-B. "Spirit of Might".
-    indigoRoom, // Electricity? B-C. "Spirit of Knowledge".
-    violetRoom, // Vox. Humanoid? C-D. "Spirit of the Fear of the Lord".
+    redRoom,
+    orangeRoom,
+    yellowRoom,
+    greenRoom,
+    blueRoom,
+    indigoRoom,
+    violetRoom,
   ],
 })
 
