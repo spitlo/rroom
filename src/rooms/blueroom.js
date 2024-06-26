@@ -143,7 +143,7 @@ const blueRoom = {
   desc: [
     'The room is dark. The only light – blue, pulsating – emanates from the translucent pipes running up and down the walls.',
     'The pipes seem to converge in a row of seven nozzles, pointed at a slightly upwards angle.',
-    'Above the nozzles are seven valves, labeled A to G.',
+    'Above the nozzles are seven **valves**, labeled A to G.',
   ].join('\n'),
   isActive: false,
   isMuted: false,
@@ -159,6 +159,14 @@ const blueRoom = {
   },
   items: [
     ...valves,
+    {
+      name: 'valves',
+      onUse: () => {
+        println(
+          'You can’t use all the valves at the same time. Try to use **valveb** for example.'
+        )
+      },
+    },
     {
       name: ['wheel'],
       desc: '',
