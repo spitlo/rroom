@@ -29,10 +29,10 @@ const indigoRoom = {
   generateSoundString,
   onEnter: () => {
     // Only show image once
-    const indigoroom = getRoom('indigoroom')
-    indigoroom.img = ''
+    // const indigoroom = getRoom('indigoroom')
+    // indigoroom.img = ''
 
-    onEnter()
+    onEnter('indigoroom')
   },
   items: [],
   exits: [

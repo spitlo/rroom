@@ -5,10 +5,11 @@ const DESCRIPTION = {
     'Welcome to the Rainbow Room',
     'This is an experiment in generative, semi-random sequencing – hidden inside an Interactive Fiction story.',
     'If this is your first time, type HELP to see the commands that are available to you.',
+    'BEWARE - This is a work in progress and very much ib beta still - BEWARE',
   ].join('\n'),
   standard: [
     'You’re standing in an octagonal room. Seven of the walls hold a door, each in one of the colors of the rainbow.',
-    'The eight wall is almost completely covered by what looks like a **control panel** from some obscure fifties’ sci-fi movie: futuristic, but in an old-fashioned way.',
+    'The eighth wall is almost completely covered by what looks like a **control panel** from some obscure fifties’ sci-fi movie: futuristic, but in an old-fashioned way.',
     'LEDs, meters, levers, buttons and sliders – some labeled, some not – take up most of the real estate of the panel.',
   ].join('\n'),
 }
@@ -56,7 +57,7 @@ const describeMutes = () => {
 const rainbowRoom = {
   id: 'rainbowroom',
   img: `R A I N B O W _ R O O M`,
-  name: 'The Rainbow Room',
+  name: 'The Rainbow Room BETA',
   desc: `${DESCRIPTION.intro}\n- - - - - - - - - - - - - - - - - - - -\n${DESCRIPTION.standard}`,
   onEnter: () => {
     // Only show image once
@@ -74,6 +75,7 @@ const rainbowRoom = {
       desc: [
         'It’s some kind of control panel. In the center of it there are two huge buttons. One says ’**PLAY**’, the other one ’**STOP**’.',
         'A row of LEDs run across the top of the panel. There are seven of them. Their colors correspond to the colors of the doors.',
+        'And, coincidentally, to the colors of the rainbow.',
         'Underneath each LED is a switch labeled "Mute".',
       ].join('\n'),
       onLook: () => {

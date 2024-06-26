@@ -35,7 +35,10 @@ const generateSoundString = () => {
 }
 
 const updatePattern = () => {
-  pattern = `note("${openValves.map((l) => `${l}${octave}`).join(' ')}")`
+  pattern =
+    openValves.length > 0
+      ? `note("${openValves.map((l) => `${l}${octave}`).join(' ')}")`
+      : ''
 }
 
 const describeValves = () => {
@@ -149,10 +152,10 @@ const blueRoom = {
   enableWheelTurn,
   onEnter: () => {
     // Only show image once
-    const blueroom = getRoom('blueroom')
-    blueroom.img = ''
+    // const blueroom = getRoom('blueroom')
+    // blueroom.img = ''
 
-    onEnter()
+    onEnter('blueroom')
   },
   items: [
     ...valves,

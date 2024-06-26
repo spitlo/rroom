@@ -32,7 +32,10 @@ const generateSoundString = () => {
 }
 
 const updatePattern = () => {
-  pattern = `note("${buttons.map((l) => `${l}${octave}`).join(' ')}")`
+  pattern =
+    buttons.length > 0
+      ? `note("${buttons.map((l) => `${l}${octave}`).join(' ')}")`
+      : ''
 }
 
 const describeButtons = () => {
@@ -123,10 +126,10 @@ const greenRoom = {
   generateSoundString,
   onEnter: () => {
     // Only show image once
-    const greenroom = getRoom('greenroom')
-    greenroom.img = ''
+    // const greenroom = getRoom('greenroom')
+    // greenroom.img = ''
 
-    onEnter()
+    onEnter('greenroom')
   },
   items: [
     ...buttonItems,

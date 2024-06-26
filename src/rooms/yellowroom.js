@@ -39,7 +39,10 @@ const generateSoundString = () => {
 }
 
 const updatePattern = () => {
-  pattern = `note("${slots.map((l) => `${l}${l === '-' ? '' : octave}`).join(' ')}")`
+  pattern =
+    slots.length > 0
+      ? `note("${slots.map((l) => `${l}${l === '-' ? '' : octave}`).join(' ')}")`
+      : ''
 }
 
 const describeSlots = () => {
@@ -69,10 +72,10 @@ const yellowRoom = {
   generateSoundString,
   onEnter: () => {
     // Only show image once
-    const yellowroom = getRoom('yellowroom')
-    yellowroom.img = ''
+    // const yellowroom = getRoom('yellowroom')
+    // yellowroom.img = ''
 
-    onEnter()
+    onEnter('yellowroom')
   },
   items: [
     {

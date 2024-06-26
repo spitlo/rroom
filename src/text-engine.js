@@ -469,6 +469,7 @@ let talkToOrAboutX = (preposition, x) => {
         const isAvailable = topic && topicIsAvailable(character, topic);
         if (isAvailable) {
           if (topic.line) {
+            // println(topic.line, character.name);
             println(topic.line);
           }
           if (topic.onSelected) {

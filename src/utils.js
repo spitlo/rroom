@@ -37,7 +37,11 @@ const reevaluate = () => {
   }
 }
 
-const onEnter = () => {
+const onEnter = (roomId) => {
+  if (roomId && !disk.visitedRooms.includes(roomId)) {
+    disk.visitedRooms.push(roomId)
+  }
+
   reevaluate()
 }
 

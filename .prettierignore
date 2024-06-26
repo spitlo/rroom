@@ -2,3 +2,4 @@ build
 *.html
 public/css
 docs
+src/text-engine.js

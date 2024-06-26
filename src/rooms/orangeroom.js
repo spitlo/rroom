@@ -29,10 +29,10 @@ const orangeRoom = {
   generateSoundString,
   onEnter: () => {
     // Only show image once
-    const orangeroom = getRoom('orangeroom')
-    orangeroom.img = ''
+    // const orangeroom = getRoom('orangeroom')
+    // orangeroom.img = ''
 
-    onEnter()
+    onEnter('orangeroom')
   },
   items: [],
   exits: [

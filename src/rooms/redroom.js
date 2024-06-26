@@ -10,12 +10,18 @@ const color = 'Red'
 let pattern = ''
 const synthParts = []
 
+let octave = 2
+
 const generateSoundString = () => {
   if (pattern) {
     return `${pattern}.${synthParts.join('.')}`
   } else {
     return ''
   }
+}
+
+const updatePattern = () => {
+  pattern = `note("${openValves.map((l) => `${l}${octave}`).join(' ')}")`
 }
 
 const redRoom = {
@@ -29,10 +35,10 @@ const redRoom = {
   generateSoundString,
   onEnter: () => {
     // Only show image once
-    const redroom = getRoom('redroom')
-    redroom.img = ''
+    // const redroom = getRoom('redroom')
+    // redroom.img = ''
 
-    onEnter()
+    onEnter('redroom')
   },
   items: [],
   exits: [

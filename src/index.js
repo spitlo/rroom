@@ -1,6 +1,7 @@
 import { initStrudel } from '@strudel/web'
 
 import bespokeCommands from './commands'
+import android from './characters/android'
 import rainbowRoom from './rooms/rainbowroom'
 import redRoom from './rooms/redroom'
 import orangeRoom from './rooms/orangeroom'
@@ -25,6 +26,7 @@ const gameDisk = () => ({
   cpm: 60,
   isPlaying: false,
   inventory: [],
+  visitedRooms: [],
   rooms: [
     rainbowRoom,
     redRoom,
@@ -35,6 +37,7 @@ const gameDisk = () => ({
     indigoRoom,
     violetRoom,
   ],
+  characters: [android],
 })
 
 export default gameDisk

@@ -37,6 +37,11 @@ body::before {
   z-index: 2;
 }
 
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 a, #closer {
   color: #ff902f;
 }
@@ -212,6 +217,12 @@ span {
 
 .input {
   display: flex;
+}
+
+/* Characters */
+.android {
+  background-color: #100a0e; /* #2b0b2b  */
+  color: #090;
 }
 
 @keyframes blink {
