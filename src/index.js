@@ -11,6 +11,8 @@ import blueRoom from './rooms/blueroom'
 import indigoRoom from './rooms/indigoroom'
 import violetRoom from './rooms/violetroom'
 
+import './main.css'
+
 // Override built-in commands
 commands = bespokeCommands
 

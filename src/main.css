@@ -2,7 +2,7 @@ body {
   background-color: #1b101c;
   color: rgba(255, 128, 18, 1);
   font-family: 'jgs7', monospace;
-/*  font-size: 2.6vh;*/
+  /*  font-size: 2.6vh;*/
   font-size: 28px;
   line-height: 4vh;
   padding: 0 1rem 2rem 1rem;
@@ -12,7 +12,7 @@ body {
 body::after {
   background: rgba(18, 16, 16, 0.1);
   bottom: 0;
-  content: " ";
+  content: ' ';
   display: block;
   left: 0;
   opacity: 0;
@@ -24,10 +24,18 @@ body::after {
 }
 
 body::before {
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-  background-size: 100% 2px, 3px 100%;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.06),
+      rgba(0, 255, 0, 0.02),
+      rgba(0, 0, 255, 0.06)
+    );
+  background-size:
+    100% 2px,
+    3px 100%;
   bottom: 0;
-  content: " ";
+  content: ' ';
   display: block;
   left: 0;
   pointer-events: none;
@@ -42,11 +50,13 @@ main {
   margin: 0 auto;
 }
 
-a, #closer {
+a,
+#closer {
   color: #ff902f;
 }
 
-a:hover, #closer:hover {
+a:hover,
+#closer:hover {
   color: #faca2c;
 }
 
@@ -154,7 +164,7 @@ a {
 
 span {
   margin-left: 2vw;
-  margin-right: .6vh;
+  margin-right: 0.6vh;
 }
 
 #input {
@@ -163,11 +173,13 @@ span {
   border: none;
   position: relative;
   bottom: 0.175vh;
-  margin-top: .1vh;
-  margin-left: .8vh;
+  margin-top: 0.1vh;
+  margin-left: 0.8vh;
 }
 
-#input, .input, .user {
+#input,
+.input,
+.user {
   height: 4vh;
   font-family: 'jgs7', monospace;
   color: #ffa500;
@@ -245,28 +257,187 @@ span {
 
 @keyframes decrunch {
   /* Firefox and IE10 won't animate linear-gradients, so we fall back to full border color change */
-   20% {
-     background: #b8b8b8;
-     background-image: linear-gradient(to bottom, #fff 5%, #000 5%, #000 10%, #b8b8b8 10%, #b8b8b8 16%, #5090d0 16%, #5090d0 23%, #98ff98 23%, #98ff98 28%, #808080 28%, #808080 33%, #484848 33%, #484848 40%, #c87870 40%, #c87870 46%, #472b1b 46%, #472b1b 51%, #a04800 51%, #a04800 57%, #f0e858 57%, #f0e858 62%, #181090 62%, #181090 69%, #50b818 69%, #50b818 78%, #a838a0 78%, #a838a0 86%, #68d0a8 86%, #68d0a8 95%, #882000 95%);
+  20% {
+    background: #b8b8b8;
+    background-image: linear-gradient(
+      to bottom,
+      #fff 5%,
+      #000 5%,
+      #000 10%,
+      #b8b8b8 10%,
+      #b8b8b8 16%,
+      #5090d0 16%,
+      #5090d0 23%,
+      #98ff98 23%,
+      #98ff98 28%,
+      #808080 28%,
+      #808080 33%,
+      #484848 33%,
+      #484848 40%,
+      #c87870 40%,
+      #c87870 46%,
+      #472b1b 46%,
+      #472b1b 51%,
+      #a04800 51%,
+      #a04800 57%,
+      #f0e858 57%,
+      #f0e858 62%,
+      #181090 62%,
+      #181090 69%,
+      #50b818 69%,
+      #50b818 78%,
+      #a838a0 78%,
+      #a838a0 86%,
+      #68d0a8 86%,
+      #68d0a8 95%,
+      #882000 95%
+    );
   }
-   40% {
-     background: #484848;
-     background-image: linear-gradient(to bottom, #882000 10%, #68d0a8 10%, #68d0a8 12%, #a838a0 12%, #a838a0 18%, #50b818 18%, #50b818 27%, #181090 27%, #181090 38%, #f0e858 38%, #f0e858 41%, #a04800 41%, #a04800 56%, #472b1b 56%, #472b1b 61%, #c87870 61%, #c87870 66%, #484848 66%, #484848 68%, #808080 68%, #808080 75%, #98ff98 75%, #98ff98 77%, #5090d0 77%, #5090d0 92%, #b8b8b8 92%, #b8b8b8 94%, #000 94%, #000 97%, #fff 97%);
+  40% {
+    background: #484848;
+    background-image: linear-gradient(
+      to bottom,
+      #882000 10%,
+      #68d0a8 10%,
+      #68d0a8 12%,
+      #a838a0 12%,
+      #a838a0 18%,
+      #50b818 18%,
+      #50b818 27%,
+      #181090 27%,
+      #181090 38%,
+      #f0e858 38%,
+      #f0e858 41%,
+      #a04800 41%,
+      #a04800 56%,
+      #472b1b 56%,
+      #472b1b 61%,
+      #c87870 61%,
+      #c87870 66%,
+      #484848 66%,
+      #484848 68%,
+      #808080 68%,
+      #808080 75%,
+      #98ff98 75%,
+      #98ff98 77%,
+      #5090d0 77%,
+      #5090d0 92%,
+      #b8b8b8 92%,
+      #b8b8b8 94%,
+      #000 94%,
+      #000 97%,
+      #fff 97%
+    );
   }
-   60% {
-     background: #c87870;
-     background-image: linear-gradient(to bottom, #fff 5%, #c87870 5%, #c87870 14%, #484848 14%, #484848 22%, #808080 22%, #808080 31%, #98ff98 31%, #98ff98 38%, #5090d0 38%, #5090d0 43%, #b8b8b8 43%, #b8b8b8 49%, #000 49%, #000 54%, #68d0a8 54%, #68d0a8 60%, #a838a0 60%, #a838a0 67%, #50b818 67%, #50b818 72%, #181090 72%, #181090 77%, #f0e858 77%, #f0e858 84%, #a04800 84%, #a04800 90%, #472b1b 90%, #472b1b 95%, #882000 95%);
+  60% {
+    background: #c87870;
+    background-image: linear-gradient(
+      to bottom,
+      #fff 5%,
+      #c87870 5%,
+      #c87870 14%,
+      #484848 14%,
+      #484848 22%,
+      #808080 22%,
+      #808080 31%,
+      #98ff98 31%,
+      #98ff98 38%,
+      #5090d0 38%,
+      #5090d0 43%,
+      #b8b8b8 43%,
+      #b8b8b8 49%,
+      #000 49%,
+      #000 54%,
+      #68d0a8 54%,
+      #68d0a8 60%,
+      #a838a0 60%,
+      #a838a0 67%,
+      #50b818 67%,
+      #50b818 72%,
+      #181090 72%,
+      #181090 77%,
+      #f0e858 77%,
+      #f0e858 84%,
+      #a04800 84%,
+      #a04800 90%,
+      #472b1b 90%,
+      #472b1b 95%,
+      #882000 95%
+    );
   }
-   80% {
-     background: #68d0a8;
-     background-image: linear-gradient(to bottom, #882000 5%, #68d0a8 5%, #68d0a8 14%, #a838a0 14%, #a838a0 22%, #50b818 22%, #50b818 31%, #181090 31%, #181090 38%, #f0e858 38%, #f0e858 43%, #a04800 43%, #a04800 49%, #472b1b 49%, #472b1b 54%, #c87870 54%, #c87870 60%, #484848 60%, #484848 67%, #808080 67%, #808080 72%, #98ff98 72%, #98ff98 77%, #5090d0 77%, #5090d0 84%, #b8b8b8 84%, #b8b8b8 90%, #000 90%, #000 95%, #fff 95%);
+  80% {
+    background: #68d0a8;
+    background-image: linear-gradient(
+      to bottom,
+      #882000 5%,
+      #68d0a8 5%,
+      #68d0a8 14%,
+      #a838a0 14%,
+      #a838a0 22%,
+      #50b818 22%,
+      #50b818 31%,
+      #181090 31%,
+      #181090 38%,
+      #f0e858 38%,
+      #f0e858 43%,
+      #a04800 43%,
+      #a04800 49%,
+      #472b1b 49%,
+      #472b1b 54%,
+      #c87870 54%,
+      #c87870 60%,
+      #484848 60%,
+      #484848 67%,
+      #808080 67%,
+      #808080 72%,
+      #98ff98 72%,
+      #98ff98 77%,
+      #5090d0 77%,
+      #5090d0 84%,
+      #b8b8b8 84%,
+      #b8b8b8 90%,
+      #000 90%,
+      #000 95%,
+      #fff 95%
+    );
   }
-   100% {
-     background: #50b818;
-     background-image: linear-gradient(to bottom, #fff 3%, #000 3%, #000 6%, #b8b8b8 6%, #b8b8b8 8%, #5090d0 8%, #5090d0 23%, #98ff98 23%, #98ff98 25%, #808080 25%, #808080 32%, #484848 32%, #484848 34%, #c87870 34%, #c87870 39%, #472b1b 39%, #472b1b 44%, #a04800 44%, #a04800 59%, #f0e858 59%, #f0e858 62%, #181090 62%, #181090 73%, #50b818 73%, #50b818 82%, #a838a0 82%, #a838a0 88%, #68d0a8 88%, #68d0a8 90%, #882000 90%);
+  100% {
+    background: #50b818;
+    background-image: linear-gradient(
+      to bottom,
+      #fff 3%,
+      #000 3%,
+      #000 6%,
+      #b8b8b8 6%,
+      #b8b8b8 8%,
+      #5090d0 8%,
+      #5090d0 23%,
+      #98ff98 23%,
+      #98ff98 25%,
+      #808080 25%,
+      #808080 32%,
+      #484848 32%,
+      #484848 34%,
+      #c87870 34%,
+      #c87870 39%,
+      #472b1b 39%,
+      #472b1b 44%,
+      #a04800 44%,
+      #a04800 59%,
+      #f0e858 59%,
+      #f0e858 62%,
+      #181090 62%,
+      #181090 73%,
+      #50b818 73%,
+      #50b818 82%,
+      #a838a0 82%,
+      #a838a0 88%,
+      #68d0a8 88%,
+      #68d0a8 90%,
+      #882000 90%
+    );
   }
 }
-
 
 @font-face {
   font-family: 'Mono10Light';
@@ -282,55 +453,10 @@ span {
     url('/fonts/Mono10Regular.otf') format('opentype');
 }
 
-@font-face {
-  font-family: 'PixeloidMono';
-  src:
-    local('Pixeloid Mono'),
-    url('/fonts/PixeloidMono.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'PixeloidSansBold';
-  src:
-    local('PixeloidSans Bold'),
-    url('/fonts/PixeloidSans-Bold.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'PixeloidSans';
-  src:
-    local('PixeloidSans'),
-    url('/fonts/PixeloidSans.otf') format('opentype');
-}
-
-/*medieval-pixel*/
-
-@font-face {
-  font-family: 'Video';
-  src:
-    local('Video'),
-    url('/fonts/Video.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'MedievalPixel';
-  src:
-    local('MedievalPixel'),
-    url('/fonts/medieval-pixel.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'Pono188';
-  src:
-    local('Pono 188'),
-    url('/fonts/Pono_188.otf') format('opentype');
-}
-
 /* Keep only one of these */
 @font-face {
   font-family: 'jgs5';
-  src:
-    url('/fonts/jgs5.woff2') format('woff2');
+  src: url('/fonts/jgs5.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -338,8 +464,7 @@ span {
 
 @font-face {
   font-family: 'jgs7';
-  src:
-    url('/fonts/jgs7.woff2') format('woff2');
+  src: url('/fonts/jgs7.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -347,10 +472,8 @@ span {
 
 @font-face {
   font-family: 'jgs9';
-  src:
-    url('/fonts/jgs9.woff2') format('woff2');
+  src: url('/fonts/jgs9.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
-
