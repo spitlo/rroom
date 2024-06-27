@@ -97,31 +97,31 @@ const rainbowRoom = {
   ],
   exits: [
     {
-      dir: ['Red Door', 'red', 'r'],
+      dir: ['Red Door', 'red', 'r', 'sw'],
       id: 'redroom',
     },
     {
-      dir: ['Orange Room', 'orange', 'o'],
+      dir: ['Orange Door', 'orange', 'o', 'w'],
       id: 'orangeroom',
     },
     {
-      dir: ['Yellow Room', 'yellow', 'y'],
+      dir: ['Yellow Door', 'yellow', 'y', 'nw'],
       id: 'yellowroom',
     },
     {
-      dir: ['Green Room', 'green', 'g'],
+      dir: ['Green Door', 'green', 'g', 'n'],
       id: 'greenroom',
     },
     {
-      dir: ['Blue Room', 'blue', 'b'],
+      dir: ['Blue Door', 'blue', 'b', 'ne'],
       id: 'blueroom',
     },
     {
-      dir: ['Indigo Room', 'indigo', 'i'],
+      dir: ['Indigo Door', 'indigo', 'i', 'e'],
       id: 'indigoroom',
     },
     {
-      dir: ['Violet Room', 'violet', 'v'],
+      dir: ['Violet Door', 'violet', 'v', 'se'],
       id: 'violetroom',
     },
   ],
