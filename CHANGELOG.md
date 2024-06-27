@@ -2,6 +2,10 @@
 
 This changelog is automatically generated.
 
+## v0.0.4
+
+- Start in Rainbow Room [`29b3a64`](../../commit/29b3a64ae80c9747ef7ed8be9bbfaed976e9e001)
+
 ## v0.0.3
 
 - Give each room a trigram. Change font. Add paragraph hack [`faabfd9`](../../commit/faabfd98d2789db69ecf58fdbc2570e35e8c7994)
