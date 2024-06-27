@@ -1,5 +1,23 @@
 import { reevaluate } from './utils'
 
+let help = () => {
+  const instructions = `The following commands are available:
+    LOOK:           'look at key'
+    TAKE:           'take book'
+    GO:             'go north' (or just type 'n')
+    USE:            'use bucket'
+    PRESS:          'press play'
+    TALK:           'talk to mary'
+    ITEMS:          list items in the room
+    CHARS:          list characters in the room
+    INV:            list inventory items
+    SAVE/LOAD:      save current game, or load a saved game (in memory)
+    IMPORT/EXPORT:  save current game, or load a saved game (on disk)
+    HELP:           this help menu
+  `
+  println(instructions)
+}
+
 const mute = (roomId) => {
   if (disk.roomId === 'rainbowroom') {
     const room = getRoom(roomId)
@@ -48,7 +66,7 @@ const press = (item = '') => {
   }
 }
 
-const bespokeCommands = [
+const customCommands = [
   // No arguments (e.g. "help", "chars", "inv")
   {
     inv,
@@ -114,4 +132,4 @@ const bespokeCommands = [
   },
 ]
 
-export default bespokeCommands
+export default customCommands

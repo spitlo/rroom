@@ -100,10 +100,13 @@ const rainbowRoom = {
     {
       dir: ['Red Door', 'red', 'r', 'sw'],
       id: 'redroom',
+      block:
+        'The red door appears to be locked. What are they keeping from you?',
     },
     {
       dir: ['Orange Door', 'orange', 'o', 'w'],
       id: 'orangeroom',
+      block: 'Something seems to be blocking this door. But what?',
     },
     {
       dir: ['Yellow Door', 'yellow', 'y', 'nw'],
@@ -120,6 +123,8 @@ const rainbowRoom = {
     {
       dir: ['Indigo Door', 'indigo', 'i', 'e'],
       id: 'indigoroom',
+      block:
+        'No matter how hard you pull, the door won’t budge. You can’t help but wonder what might be hidden behind it.',
     },
     {
       dir: ['Violet Door', 'violet', 'v', 'se'],

@@ -1,6 +1,6 @@
 import { initStrudel } from '@strudel/web'
 
-import bespokeCommands from './commands'
+import customCommands from './commands'
 import android from './characters/android'
 import rainbowRoom from './rooms/rainbowroom'
 import redRoom from './rooms/redroom'
@@ -14,7 +14,7 @@ import violetRoom from './rooms/violetroom'
 import './main.css'
 
 // Override built-in commands
-commands = bespokeCommands
+commands = customCommands
 
 // Initiate Strudel
 initStrudel()
