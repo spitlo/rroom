@@ -3,6 +3,10 @@ import { onEnter, reevaluate } from '../utils'
 /*
 
 Indigo: Electricity? Notes B-C. "Spirit of Knowledge".
+Trigram: Water, the Abysmal, the gorge, since that's where the water naturally travels. Underground.
+- -
+---
+- -
 
 */
 
@@ -20,7 +24,7 @@ const generateSoundString = () => {
 
 const indigoRoom = {
   id: 'indigoroom',
-  img: `I N D I G O _ R O O M`,
+  img: ['■■■■ ■■■■', '■■■■■■■■■', '■■■■ ■■■■'].join('\n'),
   name: `The ${color} Room`,
   desc: `This is the indigo room`,
   isActive: false,

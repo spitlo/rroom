@@ -3,6 +3,12 @@ import { getRandomInt, onEnter, reevaluate } from '../utils'
 /*
 
 Yellow: Envy? Gambling?  Notes F-G. "Spirit of Understanding".
+Trigram: Wind, the Gentle (Wood), the movement of air.
+---
+---
+- -
+
+TODO: Contraptin should be some kind of flute I guess?
 
 */
 
@@ -63,7 +69,7 @@ const describeSlots = () => {
 
 const yellowRoom = {
   id: 'yellowroom',
-  img: `Y E L L O W _ R O O M`,
+  img: ['■■■■■■■■■', '■■■■■■■■■', '■■■■ ■■■■'].join('\n'),
   name: `The ${color} Room`,
   desc: `This is the yellow room. In the middle of the room there is a weird **contraption**. On the floor beneath the contraption is a **bucket** with what looks like wooden alphabet cubes.`,
   isActive: false,
@@ -85,7 +91,7 @@ const yellowRoom = {
         'There are five square slots behind a glass pane.',
         'The slots are about the same size as the alphabet cubes in the bucket at the bottom of the contraption.',
         'On top of the contraption is a large funnel.',
-      ].join('\n'),
+      ].join('\n\n'),
     },
     {
       name: ['bucket', 'cubes'],

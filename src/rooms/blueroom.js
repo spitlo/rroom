@@ -3,6 +3,10 @@ import { getRandomInt, onEnter, reevaluate } from '../utils'
 /*
 
 Blue: Water. Bass. Notes A-B. "Spirit of Might".
+Trigram: Lake, the Joyous, the big body of water. The trigram represents the open.
+- -
+---
+---
 
 Manual: Valves.
 Random: Automatic valves.
@@ -108,11 +112,13 @@ const disableWheelTurn = () => {
 const valves = notes.map((letter) => {
   return {
     name: `Valve${letter}`,
-    desc: `A valve with the letter ${letter}`,
+    desc: `A valve labeled "${letter}"`,
     onUse: () => {
       if (openValves.includes(letter)) {
+        // Close valve
         openValves.splice(openValves.indexOf(letter), 1)
       } else {
+        // Open valve
         openValves.push(letter)
       }
 
@@ -138,7 +144,7 @@ const valves = notes.map((letter) => {
 
 const blueRoom = {
   id: 'blueroom',
-  img: `B L U E _ R O O M`,
+  img: ['■■■■ ■■■■', '■■■■■■■■■', '■■■■■■■■■'].join('\n'),
   name: `The ${color} Room`,
   desc: [
     'The room is dark. The only light – blue, pulsating – emanates from the translucent pipes running up and down the walls.',

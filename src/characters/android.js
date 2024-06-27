@@ -1,6 +1,6 @@
 const android = {
   name: ['Android'],
-  roomId: 'violetroom', // TODO REMOVE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  roomId: '',
   desc: [
     'The android looks like something from a past future. Its domed head is not shiny or smooth as you’d expect.',
     'The shape seems more like it’s been conjured by a blacksmith than an engineer or a machine.',

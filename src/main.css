@@ -1,9 +1,8 @@
 body {
   background-color: #1b101c;
   color: rgba(255, 128, 18, 1);
-  font-family: 'jgs7', monospace;
-  /*  font-size: 2.6vh;*/
-  font-size: 28px;
+  font-family: 'jgs5', monospace;
+  font-size: 30px;
   line-height: 4vh;
   padding: 0 1rem 2rem 1rem;
   text-shadow: 0 0 5px rgba(255, 78, 0, 0.6);
@@ -181,7 +180,7 @@ span {
 .input,
 .user {
   height: 4vh;
-  font-family: 'jgs7', monospace;
+  font-family: 'jgs5', monospace;
   color: #ffa500;
   font-size: 3vh;
 }
@@ -192,7 +191,15 @@ span {
 
 #output {
   padding: 2vw 2vw 0 2vw;
-  font-family: 'jgs7', monospace;
+  font-family: 'jgs5', monospace;
+}
+
+/* Paragraph hack */
+#output br {
+  content: '';
+  margin: 1em;
+  display: block;
+  font-size: 12px;
 }
 
 #output div {
@@ -218,13 +225,14 @@ span {
 }
 
 #output div.img {
-  font-family: 'jgs7';
+  font-family: monospace;
+  font-size: 28px;
   white-space: pre;
   display: inline-block;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  line-height: 1;
+  margin-bottom: 1em;
 }
 
 .input {

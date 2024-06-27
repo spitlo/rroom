@@ -3,6 +3,10 @@ import { onEnter, reevaluate } from '../utils'
 /*
 
 Orange: Organ, fire. Matches needded? Notes E-F. "Spirit of Wisdom".
+Trigram: Fire, the Clinging, the consuming energy, breaking free and departing.
+---
+- -
+---
 
 */
 
@@ -20,7 +24,7 @@ const generateSoundString = () => {
 
 const orangeRoom = {
   id: 'orangeroom',
-  img: `O R A N G E _ R O O M`,
+  img: ['■■■■■■■■■', '■■■■ ■■■■', '■■■■■■■■■'].join('\n'),
   name: `The ${color} Room`,
   desc: `This is the orange room`,
   isActive: false,

@@ -3,6 +3,11 @@ import { onEnter, reevaluate } from '../utils'
 /*
 
 Green: Vegetation, lizard. Notes G-A. "Spirit of Counsel".
+Trigram: Mountain, Keeping Still.
+---
+- -
+- -
+
 
 */
 
@@ -111,7 +116,7 @@ const buttonItems = notes.map((letter) => {
 
 const greenRoom = {
   id: 'greenroom',
-  img: `G R E E N _ R O O M`,
+  img: ['■■■■■■■■■', '■■■■ ■■■■', '■■■■ ■■■■'].join('\n'),
   name: `The ${color} Room`,
   desc: [
     'This is a very green room. You can’t really see the walls – they’re all covered in leaves and vines.',

@@ -1,4 +1,12 @@
 import { onEnter } from '../utils'
+/*
+
+Trigram: Heaven, the Creative, light, and warmth.
+---
+---
+---
+
+*/
 
 const DESCRIPTION = {
   intro: [
@@ -56,7 +64,7 @@ const describeMutes = () => {
 
 const rainbowRoom = {
   id: 'rainbowroom',
-  img: `R A I N B O W _ R O O M`,
+  img: ['■■■■■■■■■', '■■■■■■■■■', '■■■■■■■■■'].join('\n'),
   name: 'The Rainbow Room BETA',
   desc: `${DESCRIPTION.intro}\n- - - - - - - - - - - - - - - - - - - -\n${DESCRIPTION.standard}`,
   onEnter: () => {

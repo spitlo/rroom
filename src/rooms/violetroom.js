@@ -4,6 +4,10 @@ import { onEnter, reevaluate } from '../utils'
 /*
 
 Violet: Vox. Humanoid? Notes C-D. "Spirit of the Fear of the Lord".
+Trigram: Thunder, the Arousing, the voice of heaven.
+- -
+- -
+---
 
 */
 
@@ -40,7 +44,7 @@ const updatePattern = () => {
 
 const violetRoom = {
   id: 'violetroom',
-  img: `V I O L E T _ R O O M`,
+  img: ['■■■■ ■■■■', '■■■■■■■■■', '■■■■ ■■■■'].join('\n'),
   name: `The ${color} Room`,
   desc: [
     // Don’t reveal the android until user looks at mannequin

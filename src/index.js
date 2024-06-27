@@ -24,7 +24,7 @@ initStrudel()
 // |__/ | ___] | \_
 // ------------ ---  --- >
 const gameDisk = () => ({
-  roomId: 'rainbowroom',
+  roomId: 'violetroom',
   cpm: 60,
   isPlaying: false,
   inventory: [],

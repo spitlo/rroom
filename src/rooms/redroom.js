@@ -3,6 +3,11 @@ import { onEnter, reevaluate } from '../utils'
 /*
 
 Red: Siren?, blood? Notes D-E. F according to Scriabin. "Spirit of the Lord".
+Trigram: Earth, the Receptive, dark, and cold.
+- -
+- -
+- -
+
 
 */
 
@@ -26,7 +31,7 @@ const updatePattern = () => {
 
 const redRoom = {
   id: 'redroom',
-  img: `R E D _ R O O M`,
+  img: ['■■■■ ■■■■', '■■■■ ■■■■', '■■■■ ■■■■'].join('\n'),
   name: `The ${color} Room`,
   desc: `This is the red room`,
   isActive: false,
