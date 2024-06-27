@@ -48,7 +48,7 @@ const redRoom = {
   items: [],
   exits: [
     {
-      dir: ['Rainbow Room', 'rainbowroom', 'exit', 'x'],
+      dir: ['Rainbow Room', 'rainbowroom', 'exit', 'ne', 'x'],
       id: 'rainbowroom',
     },
   ],

@@ -169,7 +169,7 @@ const yellowRoom = {
   ],
   exits: [
     {
-      dir: ['Rainbow Room', 'rainbowroom', 'exit', 'x'],
+      dir: ['Rainbow Room', 'rainbowroom', 'exit', 'se', 'x'],
       id: 'rainbowroom',
     },
   ],

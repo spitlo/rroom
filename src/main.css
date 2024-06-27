@@ -219,9 +219,11 @@ span {
 #output .room-name {
   font-family: 'Mono10';
   letter-spacing: 2px;
-  font-size: 56px;
+  font-size: 64px;
   text-decoration: none;
   border-bottom: 1px solid;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 #output div.img {
@@ -233,6 +235,7 @@ span {
   left: 50%;
   transform: translateX(-50%);
   margin-bottom: 1em;
+  line-height: 1;
 }
 
 .input {

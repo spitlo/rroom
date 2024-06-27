@@ -41,7 +41,7 @@ const orangeRoom = {
   items: [],
   exits: [
     {
-      dir: ['Rainbow Room', 'rainbowroom', 'exit', 'x'],
+      dir: ['Rainbow Room', 'rainbowroom', 'exit', 'e', 'x'],
       id: 'rainbowroom',
     },
   ],

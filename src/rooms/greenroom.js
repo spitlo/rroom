@@ -278,7 +278,7 @@ const greenRoom = {
   ],
   exits: [
     {
-      dir: ['Rainbow Room', 'rainbowroom', 'exit', 'x'],
+      dir: ['Rainbow Room', 'rainbowroom', 'exit', 's', 'x'],
       id: 'rainbowroom',
     },
   ],

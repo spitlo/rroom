@@ -57,6 +57,14 @@ const bespokeCommands = [
     look,
     l: look, // shortcut for look
     go,
+    n,
+    s,
+    e,
+    w,
+    ne,
+    se,
+    sw,
+    nw,
     talk,
     t: talk, // shortcut for talk
     take,

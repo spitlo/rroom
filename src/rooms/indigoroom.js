@@ -41,7 +41,7 @@ const indigoRoom = {
   items: [],
   exits: [
     {
-      dir: ['Rainbow Room', 'rainbowroom', 'exit', 'x'],
+      dir: ['Rainbow Room', 'rainbowroom', 'exit', 'w', 'x'],
       id: 'rainbowroom',
     },
   ],

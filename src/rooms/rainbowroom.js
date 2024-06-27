@@ -16,8 +16,9 @@ const DESCRIPTION = {
     'BEWARE - This is a work in progress and very much ib beta still - BEWARE',
   ].join('\n'),
   standard: [
-    'You’re standing in an octagonal room. Seven of the walls hold a door, each in one of the colors of the rainbow.',
-    'The eighth wall is almost completely covered by what looks like a **control panel** from some obscure fifties’ sci-fi movie: futuristic, but in an old-fashioned way.',
+    'You’re standing in the middle of an octagonal room. Seven of the walls surrounding you hold a door; each door is one of the colors of the rainbow.',
+    'From left to right, you have a **Red Door** to the south west. To the west is an **Orange Door**. Next is a **Yellow Door** to the nort west. Due north is a **Green Door**, and next to it, to the north east, is a **Blue Door**. Due east is an **Indigo Door**, and to the south east is a **Violet Door**.',
+    'To the south, the eighth wall is almost completely covered by what looks like a **control panel** from some obscure fifties’ sci-fi movie: futuristic, but in an old-fashioned way.',
     'LEDs, meters, levers, buttons and sliders – some labeled, some not – take up most of the real estate of the panel.',
   ].join('\n'),
 }
