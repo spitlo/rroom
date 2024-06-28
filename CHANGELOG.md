@@ -2,6 +2,10 @@
 
 This changelog is automatically generated.
 
+## v0.0.8
+
+- Mobile modal quick fix [`54ca5c9`](../../commit/54ca5c970985879509a5f706ae2aba6ffac96f81)
+
 ## v0.0.7
 
 - Add a really ugly modal to lower expectations [`b44caac`](../../commit/b44caac03b6d76112dfd1c061e01883d79be1300)
