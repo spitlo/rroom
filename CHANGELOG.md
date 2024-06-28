@@ -2,6 +2,10 @@
 
 This changelog is automatically generated.
 
+## v0.0.6
+
+- No-js styling [`cad0f58`](../../commit/cad0f582e0b57e5a22f6a3a8ef428773905dd148)
+
 ## v0.0.5
 
 - Get mutes going. Improve experience for non-js users [`d8da986`](../../commit/d8da986ad63a2e342d46e5e662fbae369825f1b9)
