@@ -2,6 +2,10 @@
 
 This changelog is automatically generated.
 
+## v0.0.7
+
+- Add a really ugly modal to lower expectations [`b44caac`](../../commit/b44caac03b6d76112dfd1c061e01883d79be1300)
+
 ## v0.0.6
 
 - No-js styling [`cad0f58`](../../commit/cad0f582e0b57e5a22f6a3a8ef428773905dd148)
