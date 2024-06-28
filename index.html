@@ -8,8 +8,17 @@
   <title>The Rainbow Room</title>
 </head>
 
-<body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
+<body class="no-js">
+  <noscript>
+    <h1>I’m sorry...</h1>
+    <p>...but this game requires you to enable JavaScript to run it.</p>
+    <p>To give you a chance to make an informed decision, here’s what you’re missing:</p>
+    <p>TLDR; Not much.</p>
+    <p>Longer version: The Rainbow Room is an experiment in generative, semi-random sequencing – hidden inside an Interactive Fiction story.</p>
+    <p>If you’re concerned about privacy, we use no cookies and no analytics software.</p>
+    <p>The game is hosted on Github Pages, so I can’t really say what sort of data they store on their servers, but at least at the time of writing <date>2024-06-28</date>, they don’t inject any sort of client-side analytics.</p>
+  </noscript>
+
   <main>
     <div id="output"></div>
 
@@ -22,6 +31,7 @@
   <script type="module">
     import gameDisk from '/src/index.js'
     loadDisk(gameDisk)
+    document.body.classList.remove('no-js')
   </script>
 </body>
 

@@ -8,6 +8,10 @@ body {
   text-shadow: 0 0 5px rgba(255, 78, 0, 0.6);
 }
 
+body.no-js div.input {
+  display: none;
+}
+
 body::after {
   background: rgba(18, 16, 16, 0.1);
   bottom: 0;

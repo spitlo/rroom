@@ -1,4 +1,4 @@
-import { onEnter } from '../utils'
+import { onEnter, reevaluate } from '../utils'
 /*
 
 Trigram: Heaven, the Creative, light, and warmth.
@@ -18,10 +18,12 @@ const DESCRIPTION = {
   standard: [
     'You’re standing in the middle of an octagonal room. Seven of the walls surrounding you hold a door; each door is one of the colors of the rainbow.',
     'From left to right, you have a **Red Door** to the south west. To the west is an **Orange Door**. Next is a **Yellow Door** to the nort west. Due north is a **Green Door**, and next to it, to the north east, is a **Blue Door**. Due east is an **Indigo Door**, and to the south east is a **Violet Door**.',
-    'To the south, the eighth wall is almost completely covered by what looks like a **control panel** from some obscure fifties’ sci-fi movie: futuristic, but in an old-fashioned way.',
+    'The eighth wall is almost completely covered by what looks like a **control panel** from some obscure fifties’ sci-fi movie: futuristic, but in an old-fashioned way.',
     'LEDs, meters, levers, buttons and sliders – some labeled, some not – take up most of the real estate of the panel.',
   ].join('\n'),
 }
+
+const colors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet']
 
 const describeLeds = () => {
   const activeRooms = disk.rooms
@@ -63,6 +65,38 @@ const describeMutes = () => {
   }
 }
 
+const muteSwitches = colors.map((room) => {
+  console.log(disk) /* eslint-disable-line */
+  const mutedRooms = disk
+    ? disk.rooms.filter((room) => room.isMuted).map((room) => room.color)
+    : []
+
+  return {
+    name: `${room}Switch`,
+    desc: `A ${room} switch labeled "MUTE"`,
+    onUse: () => {
+      const roomObject = getRoom(`${room.toLowerCase()}room`)
+      if (mutedRooms.includes(room)) {
+        mutedRooms.splice(mutedRooms.indexOf(room), 1)
+        roomObject.isMuted = false
+      } else {
+        mutedRooms.push(room)
+        roomObject.isMuted = true
+      }
+
+      if (!disk.isPlaying) {
+        println('Nothing happens.')
+      }
+
+      // Update pattern, then update Strudel
+      reevaluate()
+
+      // Tell user what buttons are depressed
+      describeMutes()
+    },
+  }
+})
+
 const rainbowRoom = {
   id: 'rainbowroom',
   img: ['■■■■■■■■■', '■■■■■■■■■', '■■■■■■■■■'].join('\n'),
@@ -79,6 +113,7 @@ const rainbowRoom = {
     rainbowRoom.desc = DESCRIPTION.standard
   },
   items: [
+    ...muteSwitches,
     {
       name: ['control panel', 'panel'],
       desc: [
