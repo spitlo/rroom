@@ -11,6 +11,14 @@ body {
 body.no-js div.input {
   display: none;
 }
+noscript h1 {
+  max-width: 960px;
+  margin: 2em auto 1em;
+}
+noscript p {
+  max-width: 960px;
+  margin: 0 auto;
+}
 
 body::after {
   background: rgba(18, 16, 16, 0.1);
