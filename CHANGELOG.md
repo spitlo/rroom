@@ -2,6 +2,13 @@
 
 This changelog is automatically generated.
 
+## v0.0.5
+
+- Get mutes going. Improve experience for non-js users [`d8da986`](../../commit/d8da986ad63a2e342d46e5e662fbae369825f1b9)
+- Custom help command. Add blocks for doors to unpopulated rooms [`7d09cc0`](../../commit/7d09cc071e17c0695356aa5e9292ca0253373665)
+- Tweak styling. Add directions [`c95e880`](../../commit/c95e880706f8ba2afc9585d8c5dcbeb7d184345c)
+- Add directions to doors [`e1acad0`](../../commit/e1acad0a118cff3bfd3d8d253b3cb2d095e6b42e)
+
 ## v0.0.4
 
 - Start in Rainbow Room [`29b3a64`](../../commit/29b3a64ae80c9747ef7ed8be9bbfaed976e9e001)
