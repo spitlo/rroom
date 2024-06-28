@@ -17,7 +17,7 @@ noscript h1 {
 }
 noscript p {
   max-width: 960px;
-  margin: 0 auto;
+  margin: 0 auto 0.5em;
 }
 
 body::after {
@@ -112,6 +112,36 @@ footer nav div.index {
 
 footer nav div.next {
   text-align: right;
+}
+
+#modal-wrapper {
+  background: #00000060;
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+#modal-wrapper div {
+  background: black;
+  margin: 6em auto;
+  max-width: 80%;
+  padding: 0.5em 2em;
+  border: 1px solid #501750;
+  border-radius: 1em;
+}
+#modal-wrapper div button {
+  padding: 1em;
+  font-family: 'jgs5';
+  font-size: 30px;
+  color: orange;
+  background-color: #521452;
+  border: 3px solid #8934b3;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .page-content {

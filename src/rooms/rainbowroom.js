@@ -9,12 +9,7 @@ Trigram: Heaven, the Creative, light, and warmth.
 */
 
 const DESCRIPTION = {
-  intro: [
-    'Welcome to the Rainbow Room',
-    'This is an experiment in generative, semi-random sequencing – hidden inside an Interactive Fiction story.',
-    'If this is your first time, type HELP to see the commands that are available to you.',
-    'BEWARE - This is a work in progress and very much ib beta still - BEWARE',
-  ].join('\n'),
+  intro: ['Welcome to the Rainbow Room.'].join('\n'),
   standard: [
     'You’re standing in the middle of an octagonal room. Seven of the walls surrounding you hold a door; each door is one of the colors of the rainbow.',
     'From left to right, you have a **Red Door** to the south west. To the west is an **Orange Door**. Next is a **Yellow Door** to the nort west. Due north is a **Green Door**, and next to it, to the north east, is a **Blue Door**. Due east is an **Indigo Door**, and to the south east is a **Violet Door**.',
@@ -100,8 +95,8 @@ const muteSwitches = colors.map((room) => {
 const rainbowRoom = {
   id: 'rainbowroom',
   img: ['■■■■■■■■■', '■■■■■■■■■', '■■■■■■■■■'].join('\n'),
-  name: 'The Rainbow Room BETA',
-  desc: `${DESCRIPTION.intro}\n- - - - - - - - - - - - - - - - - - - -\n${DESCRIPTION.standard}`,
+  name: 'The Rainbow Room',
+  desc: `${DESCRIPTION.intro}\n${DESCRIPTION.standard}`,
   onEnter: () => {
     // Only show image once
     const rainbowroom = getRoom('rainbowroom')

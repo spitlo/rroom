@@ -16,7 +16,7 @@
     <p>TLDR; Not much.</p>
     <p>Longer version: The Rainbow Room is an experiment in generative, semi-random sequencing – hidden inside an Interactive Fiction story.</p>
     <p>If you’re concerned about privacy, we use no cookies and no analytics software.</p>
-    <p>The game is hosted on Github Pages, so I can’t really say what sort of data they store on their servers, but at least at the time of writing <date>2024-06-28</date>, they don’t inject any sort of client-side analytics.</p>
+    <p>The game is hosted on Github Pages, so I can’t really say what sort of data they store on their servers, but at least at the time of writing, <date>2024-06-28</date>, they don’t inject any sort of client-side analytics.</p>
   </noscript>
 
   <main>
@@ -31,7 +31,34 @@
   <script type="module">
     import gameDisk from '/src/index.js'
     loadDisk(gameDisk)
-    document.body.classList.remove('no-js')
+    document.body.className = 'modal'
+
+    // Generate modal
+    const $modalWrapper = document.createElement('div')
+    $modalWrapper.id = 'modal-wrapper'
+    const $modalContent = document.createElement('div')
+    const $modalButton = document.createElement('button')
+    $modalContent.innerHTML = `
+<h3>Welcome to the Rainbow Room BETA</h3>
+<p>This is an experiment in generative, semi-random sequencing – hidden inside an Interactive Fiction story.</p>
+<p>If this is your first time, you might want to type HELP to see the commands that are available to you.</p>
+<p>BEWARE - This is a work in progress and very much still in beta!</p>`
+    $modalButton.innerHTML = 'Ok, let’s go!'
+
+    // Now inject it!
+    document.body.appendChild($modalWrapper)
+    $modalWrapper.appendChild($modalContent)
+    $modalContent.appendChild($modalButton)
+
+    const removeModal = () => {
+      console.log('Hej', $modalWrapper); /* eslint-disable-line */
+      $modalWrapper.remove()
+      document.body.className = ''
+    }
+
+    $modalWrapper.addEventListener('click', removeModal)
+    $modalButton.addEventListener('click', removeModal)
+
   </script>
 </body>
 
