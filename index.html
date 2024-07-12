@@ -31,34 +31,36 @@
   <script type="module">
     import gameDisk from '/src/index.js'
     loadDisk(gameDisk)
-    document.body.className = 'modal'
+    document.body.className = ''
 
-    // Generate modal
-    const $modalWrapper = document.createElement('div')
-    $modalWrapper.id = 'modal-wrapper'
-    const $modalContent = document.createElement('div')
-    const $modalButton = document.createElement('button')
-    $modalContent.innerHTML = `
+    if (!import.meta.env.DEV) {
+      document.body.className = 'modal'
+
+      // Generate modal
+      const $modalWrapper = document.createElement('div')
+      $modalWrapper.id = 'modal-wrapper'
+      const $modalContent = document.createElement('div')
+      const $modalButton = document.createElement('button')
+      $modalContent.innerHTML = `
 <h3>Welcome to the Rainbow Room BETA</h3>
 <p>This is an experiment in generative, semi-random sequencing – hidden inside an Interactive Fiction story.</p>
 <p>If this is your first time, you might want to type HELP to see the commands that are available to you.</p>
 <p>BEWARE - This is a work in progress and very much still in beta!</p>`
-    $modalButton.innerHTML = 'Ok, let’s go!'
+      $modalButton.innerHTML = 'Ok, let’s go!'
 
-    // Now inject it!
-    document.body.appendChild($modalWrapper)
-    $modalWrapper.appendChild($modalContent)
-    $modalContent.appendChild($modalButton)
+      // Now inject it!
+      document.body.appendChild($modalWrapper)
+      $modalWrapper.appendChild($modalContent)
+      $modalContent.appendChild($modalButton)
 
-    const removeModal = () => {
-      console.log('Hej', $modalWrapper); /* eslint-disable-line */
-      $modalWrapper.remove()
-      document.body.className = ''
+      const removeModal = () => {
+        $modalWrapper.remove()
+        document.body.className = ''
+      }
+
+      $modalWrapper.addEventListener('click', removeModal)
+      $modalButton.addEventListener('click', removeModal)
     }
-
-    $modalWrapper.addEventListener('click', removeModal)
-    $modalButton.addEventListener('click', removeModal)
-
   </script>
 </body>
 
