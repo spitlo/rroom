@@ -3,12 +3,14 @@ import { getRandomInt, onEnter, reevaluate } from '../utils'
 /*
 
 Yellow: Envy? Gambling?  Notes F-G. "Spirit of Understanding".
+Day: Monday
 Trigram: Wind, the Gentle (Wood), the movement of air.
 ---
 ---
 - -
 
-TODO: Contraptin should be some kind of flute I guess?
+TODO: Contraption should be some kind of flute I guess?
+Also, should the handle of the lever be unscrewable and possible to use in another room?
 
 */
 
@@ -17,9 +19,26 @@ const notes = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 let pattern = ''
 const synthParts = [
   'sound("[triangle]").fm(1.4)',
+  'layer(x=>x.s("sawtooth").vib(4),x=>x.s("square").add(note(12)))',
   'lpf(800).lpq(6).dec(1.5)',
-  'vib("7:.3").gain(.8)',
+  'vib("8:.5").gain(.8)',
+  'djf("<.5 .25 .5 .75>")',
+  'leslie("<0 .3 1 .8>")',
   'velocity(sine.range(.2, .3).slow(15))',
+  'slow(2)',
+]
+
+const adverbs = [
+  'intently',
+  'with determination',
+  'slowly',
+  'carefully',
+  'whistfully',
+]
+const contraptionSounds = [
+  'There’s a muffled mechanical rumble from the machine, like you have awakened some ancient robotic creature.',
+  'There’s a weird, metallic rumble, then the klak-klak-klak of a ratchet winding, then a loud PLONK! and a pause.',
+  'At first nothing happens. Then you hear a hollow PA-DONK! and what sounds like rusty gears spinning.',
 ]
 
 let emptySlots
@@ -35,6 +54,51 @@ const resetContraption = () => {
 }
 
 resetContraption()
+
+const discoverCubes = () => {
+  // Only add cubes once
+  if (yellowRoom && yellowRoom.items.length < 4) {
+    for (const letter of notes) {
+      yellowRoom.items.push({
+        name: [`Cube${letter}`, letter, letter.toLowerCase()],
+        desc: `A cube with the letter **${letter}**`,
+        onUse: () => {
+          if (usedCubes.includes(letter)) {
+            println('This cube is already in the contraption.')
+          } else if (length.emptySlots === 0) {
+            println(
+              'The cube falls down the funnel, bounces off the filled slots, falls through the contraption and rolls out in the bucket again.'
+            )
+          } else {
+            let slot = getRandomInt(0, 4)
+            if (!emptySlots.includes(slot)) {
+              println(
+                [
+                  `You put the cube labeled "${letter}" in the funnel.`,
+                  `It really wants to land in slot ${slot + 1}, but the slot is occupied and the cube falls through and lands in the bucket again.`,
+                ].join('\n')
+              )
+            } else {
+              println(
+                [
+                  `You put the cube labeled "${letter}" in the funnel.`,
+                  `It tumbles down a tube and lands in the slot numbered ${slot + 1}`,
+                ].join('\n')
+              )
+              yellowRoom.isActive = true
+              usedCubes.push(letter)
+              emptySlots.splice(emptySlots.indexOf(slot), 1)
+              slots[slot] = letter
+              updatePattern()
+              reevaluate()
+              describeSlots()
+            }
+          }
+        },
+      })
+    }
+  }
+}
 
 const generateSoundString = () => {
   if (pattern) {
@@ -71,7 +135,10 @@ const yellowRoom = {
   id: 'yellowroom',
   img: ['■■■■■■■■■', '■■■■■■■■■', '■■■■ ■■■■'].join('\n'),
   name: `The ${color} Room`,
-  desc: `This is the yellow room. In the middle of the room there is a weird **contraption**. On the floor beneath the contraption is a **bucket** with what looks like wooden alphabet cubes.`,
+  desc: [
+    'This is the yellow room. In the middle of the room there is a weird **contraption**. On the floor beneath the contraption is a **bucket** with what looks like wooden alphabet cubes.',
+    'Behind the contraption, an enormous array of wooden pipes',
+  ].join('\n'),
   isActive: false,
   isMuted: false,
   color,
@@ -90,8 +157,34 @@ const yellowRoom = {
         'Apart from all the wiring, the ornamentation and the weird details, the contraption seems fairly simple.',
         'There are five square slots behind a glass pane.',
         'The slots are about the same size as the alphabet cubes in the bucket at the bottom of the contraption.',
-        'On top of the contraption is a large funnel.',
-      ].join('\n\n'),
+        'On top of the contraption is a large funnel. On the side of it there’s a **lever**.',
+      ].join('\n'),
+    },
+    {
+      name: ['lever'],
+      desc: [
+        'There’s a lever affixed to the right side of the contraption.',
+        'It makes it look like one of those old slot machines that people used to call "One-armed bandits".',
+      ].join('\n'),
+      onUse: () => {
+        println(`You pull the lever ${pickOne(adverbs)}.`)
+        if (usedCubes.length === 0) {
+          // No cubes are used, do nothing
+          println('The contraption makes a small racket, but nothing happens.')
+        } else {
+          // Cubes are in use, reset contraption
+          let sing = usedCubes.length === 1 ? 's' : ''
+          println(
+            [
+              pickOne(contraptionSounds),
+              `After a moment, the slots open up and ${sing ? `the cube labeled ${usedCubes[0]}` : 'all the cubes'} fall${sing} through, tumble${sing} down a tube and land${sing} in the bucket.`,
+            ].join('\n')
+          )
+          resetContraption()
+          updatePattern()
+          reevaluate()
+        }
+      },
     },
     {
       name: ['bucket', 'cubes'],
@@ -119,51 +212,14 @@ const yellowRoom = {
             }
           }
           yellowRoom.isActive = true
+          discoverCubes()
           updatePattern()
           reevaluate()
           describeSlots()
         }
       },
       onLook: () => {
-        for (const letter of notes) {
-          yellowRoom.items.push({
-            name: [`Cube${letter}`, letter, letter.toLowerCase()],
-            desc: `A cube with the letter **${letter}**`,
-            onUse: () => {
-              if (usedCubes.includes(letter)) {
-                println('This cube is already in the contraption.')
-              } else if (length.emptySlots === 0) {
-                println(
-                  'The cube falls down the funnel, bounces off the filled slots, falls through the contraption and rolls out in the bucket again.'
-                )
-              } else {
-                let slot = getRandomInt(0, 4)
-                if (!emptySlots.includes(slot)) {
-                  println(
-                    [
-                      `You put the cube with the letter ${letter} in the funnel.`,
-                      `It really wants to land in slot ${slot + 1}, but the slot is occupied and the cube falls through and lands in the bucket again.`,
-                    ].join('\n')
-                  )
-                } else {
-                  println(
-                    [
-                      `You put the cube with the letter ${letter} in the funnel.`,
-                      `It tumbles down a tube and lands in the slot numbered ${slot + 1}`,
-                    ].join('\n')
-                  )
-                  yellowRoom.isActive = true
-                  usedCubes.push(letter)
-                  emptySlots.splice(emptySlots.indexOf(slot), 1)
-                  slots[slot] = letter
-                  updatePattern()
-                  reevaluate()
-                  describeSlots()
-                }
-              }
-            },
-          })
-        }
+        discoverCubes()
       },
     },
   ],
