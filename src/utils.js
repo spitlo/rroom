@@ -23,10 +23,13 @@ const reevaluate = () => {
         // We're in this room, set volume to max
         soundString = `${soundString}.gain(1)`
       }
+      soundString = `$: ${soundString}`
+
       if (room.isMuted) {
-        soundString = `${soundString}.gain(0)`
+        soundString = `_${soundString}`
       }
-      sounds.push(`$: ${soundString}`)
+
+      sounds.push(soundString)
     }
   }
 
