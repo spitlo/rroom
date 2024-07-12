@@ -61,7 +61,6 @@ const describeMutes = () => {
 }
 
 const muteSwitches = colors.map((room) => {
-  console.log(disk) /* eslint-disable-line */
   const mutedRooms = disk
     ? disk.rooms.filter((room) => room.isMuted).map((room) => room.color)
     : []
@@ -96,7 +95,8 @@ const rainbowRoom = {
   id: 'rainbowroom',
   img: ['■■■■■■■■■', '■■■■■■■■■', '■■■■■■■■■'].join('\n'),
   name: 'The Rainbow Room',
-  desc: `${DESCRIPTION.intro}\n${DESCRIPTION.standard}`,
+  // desc: `${DESCRIPTION.intro}\n${DESCRIPTION.standard}`,
+  desc: DESCRIPTION.standard,
   onEnter: () => {
     // Only show image once
     const rainbowroom = getRoom('rainbowroom')
