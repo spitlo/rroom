@@ -3,6 +3,7 @@ import { onEnter, reevaluate } from '../utils'
 /*
 
 Indigo: Electricity? Notes B-C. "Spirit of Knowledge".
+Day: Saturday
 Trigram: Water, the Abysmal, the gorge, since that's where the water naturally travels. Underground.
 - -
 ---

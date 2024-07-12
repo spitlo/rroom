@@ -3,6 +3,7 @@ import { getRandomInt, onEnter, reevaluate } from '../utils'
 /*
 
 Blue: Water. Bass. Notes A-B. "Spirit of Might".
+Day: Friday
 Trigram: Lake, the Joyous, the big body of water. The trigram represents the open.
 - -
 ---

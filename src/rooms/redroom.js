@@ -3,6 +3,7 @@ import { onEnter, reevaluate } from '../utils'
 /*
 
 Red: Siren?, blood? Notes D-E. F according to Scriabin. "Spirit of the Lord".
+Day: Sunday
 Trigram: Earth, the Receptive, dark, and cold.
 - -
 - -

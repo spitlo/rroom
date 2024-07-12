@@ -3,6 +3,7 @@ import { onEnter, reevaluate } from '../utils'
 /*
 
 Green: Vegetation, lizard. Notes G-A. "Spirit of Counsel".
+Day: Wednesday
 Trigram: Mountain, Keeping Still.
 ---
 - -
