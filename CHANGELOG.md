@@ -2,6 +2,16 @@
 
 This changelog is automatically generated.
 
+## v0.0.9
+
+- Improve Yellow Room [`745bf1e`](../../commit/745bf1eac9021d62155e42b82b8a7461414fc004)
+- Give rooms days [`033e373`](../../commit/033e373175753917fa7439c37cba666a87534557)
+- Short description for Rainbow Room [`b266ab6`](../../commit/b266ab63df1b67fdd1d821df43ef256bbdde7f90)
+- Improve Yellow Room [`66666d0`](../../commit/66666d0a2286fd6351e1bfb642422bff262ed6c0)
+- Improve Violet Room [`e55e09e`](../../commit/e55e09e75cbc52fd02b55d162425268a41e7a84b)
+- Use underscore to mute rooms [`42b7b15`](../../commit/42b7b1503502f6f10bcb1b2ca85fe45d5aaa86ca)
+- Don’t show modal in dev [`2c3ad3e`](../../commit/2c3ad3e427a89fc59c1b9f33b040ae989d8c152a)
+
 ## v0.0.8
 
 - Mobile modal quick fix [`54ca5c9`](../../commit/54ca5c970985879509a5f706ae2aba6ffac96f81)
