@@ -40,6 +40,11 @@ const contraptionSounds = [
   'There’s a weird, metallic rumble, then the klak-klak-klak of a ratchet winding, then a loud PLONK! and a pause.',
   'At first nothing happens. Then you hear a hollow PA-DONK! and what sounds like rusty gears spinning.',
 ]
+const cubeDescents = [
+  'It tumbles down a tube, bounces off a metal pin, down another tube, then balances briefly on a tiny ledge before it proceeds downward.',
+  'It rolls down a tube, takes a sudden turn as it hits a bumper, hangs in the air for a while as if being carried by a jet of air, then continues its descent.',
+  'It slides down a tube and lands on a small moving conveyor belt where it sits for a while until it’s struck lightly by a wooden mallet. This interaction causes it to continue its descent through the bowels of the contraption.',
+]
 
 let emptySlots
 let usedCubes
@@ -60,29 +65,30 @@ const discoverCubes = () => {
   if (yellowRoom && yellowRoom.items.length < 4) {
     for (const letter of notes) {
       yellowRoom.items.push({
-        name: [`Cube${letter}`, letter, letter.toLowerCase()],
+        name: [`Cube${letter}`],
         desc: `A cube with the letter **${letter}**`,
         onUse: () => {
           if (usedCubes.includes(letter)) {
             println('This cube is already in the contraption.')
           } else if (length.emptySlots === 0) {
             println(
-              'The cube falls down the funnel, bounces off the filled slots, falls through the contraption and rolls out in the bucket again.'
+              'None of the slots are empty. The cube falls down the funnel, bounces off the filled slots, falls through the contraption and rolls out in the bucket again.'
             )
           } else {
             let slot = getRandomInt(0, 4)
             if (!emptySlots.includes(slot)) {
               println(
                 [
-                  `You put the cube labeled "${letter}" in the funnel.`,
-                  `It really wants to land in slot ${slot + 1}, but the slot is occupied and the cube falls through and lands in the bucket again.`,
+                  `You drop the cube labeled "${letter}" into the funnel.`,
+                  `It really wants to land in slot ${slot + 1}, but the slot is occupied and the cube falls through and lands back in the bucket.`,
                 ].join('\n')
               )
             } else {
               println(
                 [
-                  `You put the cube labeled "${letter}" in the funnel.`,
-                  `It tumbles down a tube and lands in the slot numbered ${slot + 1}`,
+                  `You drop the cube labeled "${letter}" into the funnel.`,
+                  pickOne(cubeDescents),
+                  `It finally lands in the slot numbered ${slot + 1}`,
                 ].join('\n')
               )
               yellowRoom.isActive = true
@@ -136,32 +142,29 @@ const yellowRoom = {
   img: ['■■■■■■■■■', '■■■■■■■■■', '■■■■ ■■■■'].join('\n'),
   name: `The ${color} Room`,
   desc: [
-    'This is the yellow room. In the middle of the room there is a weird **contraption**. On the floor beneath the contraption is a **bucket** with what looks like wooden alphabet cubes.',
-    'Behind the contraption, an enormous array of wooden pipes',
+    'This is the yellow room. The first thing in it that catches your attention is a weird **contraption**, smack in the middle of the room.',
+    'On the floor beneath the contraption is a **bucket** filled with what looks like wooden alphabet cubes.',
+    'Behind the contraption, an befuddling network of intertwining wooden pipes extend upward, some of them almost reaching the ceiling.',
   ].join('\n'),
   isActive: false,
   isMuted: false,
   color,
   generateSoundString,
   onEnter: () => {
-    // Only show image once
-    // const yellowroom = getRoom('yellowroom')
-    // yellowroom.img = ''
-
     onEnter('yellowroom')
   },
   items: [
     {
-      name: ['contraption'],
+      name: ['Contraption'],
       desc: [
         'Apart from all the wiring, the ornamentation and the weird details, the contraption seems fairly simple.',
         'There are five square slots behind a glass pane.',
         'The slots are about the same size as the alphabet cubes in the bucket at the bottom of the contraption.',
-        'On top of the contraption is a large funnel. On the side of it there’s a **lever**.',
+        'On top of the contraption is a large funnel. On the side of it is a **lever**.',
       ].join('\n'),
     },
     {
-      name: ['lever'],
+      name: ['Lever'],
       desc: [
         'There’s a lever affixed to the right side of the contraption.',
         'It makes it look like one of those old slot machines that people used to call "One-armed bandits".',
@@ -187,9 +190,9 @@ const yellowRoom = {
       },
     },
     {
-      name: ['bucket', 'cubes'],
+      name: ['Bucket', 'Cubes'],
       desc: [
-        'There are seven wooden cubes in the bucket. On each side of each cube, a letter is painted – one letter for each cube.',
+        'There are seven wooden cubes in the bucket. On each side of each cube, a letter is painted. One letter for each of the sevens cubes: A to G.',
         'The cubes are about the same size as the square slots in the contraption.',
         'It appears you can use them in some way.',
       ].join('\n'),
