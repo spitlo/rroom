@@ -112,7 +112,7 @@ const rainbowRoom = {
     {
       name: ['control panel', 'panel'],
       desc: [
-        'It’s some kind of control panel. In the center of it there are two huge buttons. One says ’**PLAY**’, the other one ’**STOP**’.',
+        'It’s a control panel all right. In the center of it there are two huge buttons. One says ’**PLAY**’, the other one says ’**STOP**’.',
         'A row of LEDs run across the top of the panel. There are seven of them. Their colors correspond to the colors of the doors.',
         'And, coincidentally, to the colors of the rainbow.',
         'Underneath each LED is a switch labeled "Mute".',
