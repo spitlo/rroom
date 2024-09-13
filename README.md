@@ -8,10 +8,14 @@ The Rainbow Room is some sort of distant cousin to [Conway Twitty’s Game of Li
 
 It uses [Strudel](https://strudel.cc) for sounds and [text-engine](https://github.com/okaybenji/text-engine/) for interactive fiction interface.
 
-**WARNING!** This is a work in progress. If you ever want to "play" the actual "game" once it’s "done", remember there might be spoilers in this code.
+> [!WARNING]
+> This is a work in progress. Also, if you ever want to "play" the actual "game" once it’s "done", remember there might be spoilers in this code.
 
 ## To do
 
+- [ ] Support env vars/command line arguments for debug?
+  - [ ] Start in a specific room
+  - [ ] Start with some rooms playing
 - [ ] Styling
 - [ ] Do we need a "Start" button to enable sound?
 - [ ] Add people? Or animals? Or some kind of interaction other than with machines?
