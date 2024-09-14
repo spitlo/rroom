@@ -9,7 +9,11 @@
         "rainbowroom",
         "redroom",
         "violetroom",
-        "yellowroom"
+        "yellowroom",
+        "prereqs",
+        "klak",
+        "donk",
+        "valveb"
     ],
     "flagWords": [
         "hte"

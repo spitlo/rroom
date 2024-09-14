@@ -14,7 +14,7 @@ const reevaluate = () => {
         continue
       }
       if (room.id !== disk.roomId && disk.roomId !== 'rainbowroom') {
-        // This is one of the romms we’re not in. Make it sound distant.
+        // This is one of the rooms we’re not in. Make it sound distant.
         soundString = `${soundString}.gain(0.2).lpf(500).room(0.7)`
       } else if (disk.roomId === 'rainbowroom') {
         // In the Rainbow Room we hear all rooms, set all volumes to 60%

@@ -21,7 +21,7 @@ const DESCRIPTION = {
 
 const colors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet']
 
-const describeLeds = () => {
+const describeLights = () => {
   const activeRooms = disk.rooms
     .filter((room) => room.isActive)
     .map((room) => room.color)
@@ -122,7 +122,7 @@ const rainbowRoom = {
         if (disk.isPlaying) {
           println('The PLAY button is pulsating slowly.')
         }
-        describeLeds()
+        describeLights()
         describeMutes()
       },
     },
