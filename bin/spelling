@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -eu
 
-npx cspell "src/**/*.js"
+npx cspell "src/**/*.js" "index.html" "README.md"
