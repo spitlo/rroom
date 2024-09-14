@@ -12,7 +12,7 @@ Trigram: Lake, the Joyous, the big body of water. The trigram represents the ope
 Manual: Valves.
 Random: Automatic valves.
 
-Perhaps we make it as a lminar flow/jumping fountain? But to get the water to jump long enough to reach the receptacle, the
+Perhaps we make it as a laminar flow/jumping fountain? But to get the water to jump long enough to reach the receptacle, the
 water pressure must be high enough. Perhaps there is a water pump connected to a hamster wheel?
 
 */
@@ -100,7 +100,7 @@ const disableWheelTurn = () => {
     [
       'As the wheel slows, the water pressure goes down again.',
       'The earth-shattering bass that moments ago filled the room dies down and dissipates as if absorbed by the cracks in the floor.',
-      'You would have to turn this wheel indefinately to get a bass line going.',
+      'You would have to turn this wheel indefinitely to get a bass line going.',
       'Or get someone to do it for you.',
     ].join('\n')
   )
@@ -179,7 +179,7 @@ const blueRoom = {
       desc: '',
       onUse: () => {
         if (openValves.length === 0) {
-          println(`The water presssure rises, but nothing happens`)
+          println(`The water pressure rises, but nothing happens`)
         } else if (openValves.length === 1) {
           println(
             [

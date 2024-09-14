@@ -1,0 +1,17 @@
+{
+    "version": "0.2",
+    "language": "en-US",
+    "words": [
+        "blueroom",
+        "greenroom",
+        "indigoroom",
+        "orangeroom",
+        "rainbowroom",
+        "redroom",
+        "violetroom",
+        "yellowroom"
+    ],
+    "flagWords": [
+        "hte"
+    ]
+}

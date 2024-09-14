@@ -2,7 +2,7 @@ import { onEnter, reevaluate } from '../utils'
 
 /*
 
-Orange: Organ, fire. Matches needded? Notes E-F. "Spirit of Wisdom".
+Orange: Organ, fire. Matches needed? Notes E-F. "Spirit of Wisdom".
 Day: Thursday
 Trigram: Fire, the Clinging, the consuming energy, breaking free and departing.
 ---

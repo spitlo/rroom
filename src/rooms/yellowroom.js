@@ -33,7 +33,7 @@ const adverbs = [
   'with determination',
   'slowly',
   'carefully',
-  'whistfully',
+  'wistfully',
 ]
 const contraptionSounds = [
   'There’s a muffled mechanical rumble from the machine, like you have awakened some ancient robotic creature.',

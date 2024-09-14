@@ -122,7 +122,7 @@ const greenRoom = {
   desc: [
     'This is a very green room. You can’t really see the walls – they’re all covered in leaves and vines.',
     'It’s incredibly humid in here.',
-    'In the far corner of the room, some kind of ancient stone machinery is withering away, halv covered in vegetation.',
+    'In the far corner of the room, some kind of ancient stone machinery is withering away, half covered in vegetation.',
     'You can see **buttons** on it, and something that looks like a **lever**.',
     'There is a **cage** on the floor.',
   ].join('\n'),

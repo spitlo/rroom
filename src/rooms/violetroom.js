@@ -126,7 +126,7 @@ const violetRoom = {
           .map((i) => i.name)
           .indexOf('Mannequin')
         violetRoom.items.splice(mannequinIndex, 1)
-        // And add the andoid instead
+        // And add the android instead
         isAndroidRevealed = true
         android.roomId = 'violetroom'
       },
