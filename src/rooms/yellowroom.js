@@ -144,7 +144,7 @@ const yellowRoom = {
   desc: [
     'This is the yellow room. The first thing in it that catches your attention is a weird **contraption**, smack in the middle of the room.',
     'On the floor beneath the contraption is a **bucket** filled with what looks like wooden alphabet cubes.',
-    'Behind the contraption, an befuddling network of intertwining wooden pipes extend upward, some of them almost reaching the ceiling.',
+    'Behind the contraption, a befuddling network of intertwining wooden pipes extend upward, some of them almost reaching the ceiling.',
   ].join('\n'),
   isActive: false,
   isMuted: false,
