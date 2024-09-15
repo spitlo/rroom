@@ -215,7 +215,7 @@ const greenRoom = {
         } else {
           println(
             [
-              'You wiggled the bolt a bit, and after a few tries you manage to slide it open.',
+              'You wiggle the bolt a bit, and after a few tries you manage to slide it open.',
               'You open the cage door and the lizard immediately slips out.',
               'After looking around the room, it heads for the stone machine and starts walking proudly across the buttons.',
             ].join('\n')
@@ -246,7 +246,6 @@ const greenRoom = {
               switch (disk.roomId) {
                 case 'blueroom':
                   const blueRoom = getRoom('blueroom')
-                  console.log(blueRoom) /* eslint-disable-line */
                   println(
                     'You put the lizard in the wheel, and it starts running immediately.'
                   )
