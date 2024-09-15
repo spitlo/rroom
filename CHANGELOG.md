@@ -2,6 +2,17 @@
 
 This changelog is automatically generated.
 
+## v0.1.0
+
+- Fix build error in @strudel/core [`821c4fc`](../../commit/821c4fc94aca066360fae98ede589140f7a8f171)
+- Cleanup [`fef0734`](../../commit/fef073457c37c23fa45cacd7de3904b499341b81)
+- Update packages [`8edf981`](../../commit/8edf9816e27e8e03c48b9c306bbc41c87d3d44b5)
+- Show context in spell chack [`675d119`](../../commit/675d11930788a1eca358ae9e3ed047fd4fd1ca0d)
+- More spelling fixes [`b902445`](../../commit/b902445821a3d0804a1fffa2346b2e9088276e03)
+- Enable cSpell for spelling help and fix some spelling errors [`d60aba2`](../../commit/d60aba2d4bd2c26e30ca4505e213ff86b8d329c0)
+- Update to do [`50fda6f`](../../commit/50fda6f47c4b0a673e186fe496b9156047d7e234)
+- Wording [`855427d`](../../commit/855427d4f866e8ca269fa3644f77dd2590e2f2c3)
+
 ## v0.0.9
 
 - Improve Yellow Room [`745bf1e`](../../commit/745bf1eac9021d62155e42b82b8a7461414fc004)
